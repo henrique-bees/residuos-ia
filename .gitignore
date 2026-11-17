@@ -13,3 +13,5 @@ modelos/*
 
 .streamlit/secrets.toml
 .env
+
+.claude/commit-approved
