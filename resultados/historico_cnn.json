@@ -1,0 +1,114 @@
+[
+  {
+    "epoca": 1,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 1.2424435588569123,
+    "acc_treino": 0.5209276018099548,
+    "perda_val": 0.9148066139787356,
+    "acc_val": 0.7176781002638523
+  },
+  {
+    "epoca": 2,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.8203985518459821,
+    "acc_treino": 0.7228506787330317,
+    "perda_val": 0.7659550122032065,
+    "acc_val": 0.7255936675461742
+  },
+  {
+    "epoca": 3,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.71367303898971,
+    "acc_treino": 0.7432126696832579,
+    "perda_val": 0.7110205490859643,
+    "acc_val": 0.7387862796833773
+  },
+  {
+    "epoca": 4,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.6637849915620968,
+    "acc_treino": 0.7652714932126696,
+    "perda_val": 0.6917013448115075,
+    "acc_val": 0.7467018469656992
+  },
+  {
+    "epoca": 5,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.6248149294659023,
+    "acc_treino": 0.7760180995475113,
+    "perda_val": 0.5986809269733983,
+    "acc_val": 0.8073878627968337
+  },
+  {
+    "epoca": 6,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.5756917323462024,
+    "acc_treino": 0.793552036199095,
+    "perda_val": 0.6162954524827822,
+    "acc_val": 0.7889182058047494
+  },
+  {
+    "epoca": 7,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.561684035068184,
+    "acc_treino": 0.8088235294117647,
+    "perda_val": 0.5498641232387371,
+    "acc_val": 0.8179419525065963
+  },
+  {
+    "epoca": 8,
+    "fase": "extra\u00e7\u00e3o",
+    "perda_treino": 0.5498404416563284,
+    "acc_treino": 0.7992081447963801,
+    "perda_val": 0.5512246715204697,
+    "acc_val": 0.8179419525065963
+  },
+  {
+    "epoca": 9,
+    "fase": "fine-tuning",
+    "perda_treino": 0.5142397014803477,
+    "acc_treino": 0.8116515837104072,
+    "perda_val": 0.5523357550984637,
+    "acc_val": 0.820580474934037
+  },
+  {
+    "epoca": 10,
+    "fase": "fine-tuning",
+    "perda_treino": 0.3498124833560098,
+    "acc_treino": 0.8766968325791855,
+    "perda_val": 0.4676167236783574,
+    "acc_val": 0.8548812664907651
+  },
+  {
+    "epoca": 11,
+    "fase": "fine-tuning",
+    "perda_treino": 0.2720444384810612,
+    "acc_treino": 0.917420814479638,
+    "perda_val": 0.4684121397208413,
+    "acc_val": 0.841688654353562
+  },
+  {
+    "epoca": 12,
+    "fase": "fine-tuning",
+    "perda_treino": 0.202955218798974,
+    "acc_treino": 0.9343891402714932,
+    "perda_val": 0.4402133599906609,
+    "acc_val": 0.8575197889182058
+  },
+  {
+    "epoca": 13,
+    "fase": "fine-tuning",
+    "perda_treino": 0.18590284985115085,
+    "acc_treino": 0.9326923076923077,
+    "perda_val": 0.4912450510153355,
+    "acc_val": 0.8390501319261213
+  },
+  {
+    "epoca": 14,
+    "fase": "fine-tuning",
+    "perda_treino": 0.14036809622702015,
+    "acc_treino": 0.958710407239819,
+    "perda_val": 0.45503349519656644,
+    "acc_val": 0.841688654353562
+  }
+]

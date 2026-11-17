@@ -95,8 +95,8 @@ Os arquivos ficam em `resultados/` (métricas em JSON/CSV) e `resultados/grafico
 
 | Módulo | Métrica | Resultado |
 |---|---|---|
-| CNN MobileNetV2 (teste) | acurácia / F1-macro | _preencher após o treino_ |
-| Baseline HOG + SVM (teste) | acurácia / F1-macro | _preencher_ |
+| CNN MobileNetV2 (teste) | acurácia / F1-macro | 0,87 / 0,86 |
+| Baseline HOG + SVM (teste) | acurácia / F1-macro | 0,70 / 0,70 |
 | Intenções — melhor modelo (CV 5 folds) | F1-macro | 0,81 ± 0,04 (Naive Bayes) |
 | Intenções (teste, 25%) | acurácia / F1-macro | 0,76 / 0,70 |
 | Busca A* | nós expandidos (média) / % ótimo | 3,1 / 100% (custo uniforme: 4,8 / 100%; BFS: 4,6 / 75%) |
