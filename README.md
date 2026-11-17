@@ -4,7 +4,7 @@ Projeto Integrador Final — **Inteligência Artificial Aplicada** (AFYA • UNI
 Tema B — Identificação e classificação de resíduos.
 
 **Integrantes:** _preencher_
-**Artigo (Overleaf):** _link_
+**Artigo (Overleaf):** _link_ — rascunho já em `artigo/main.tex` (falta compilar e revisar)
 
 ## Problema
 
@@ -75,6 +75,10 @@ python -m src.decisao.experimento_busca
 # 6. Testes e aplicação
 pytest testes -q
 streamlit run app.py
+
+# 7. Opcional: teste de campo (fotos reais, fora do domínio do TrashNet)
+# Coloque ~20 fotos por classe em dados/teste_campo/<classe>/ e rode:
+python -m src.visao_computacional.avaliar_campo
 ```
 
 > Se o download automático falhar, baixe `dataset-resized.zip` em
@@ -90,8 +94,9 @@ streamlit run app.py
 
 ## Resultados
 
-Os arquivos ficam em `resultados/` (métricas em JSON/CSV) e `resultados/graficos/`
-(matrizes de confusão, curvas de treino, comparação de busca).
+Os arquivos ficam em `resultados/` (métricas em JSON/CSV), `resultados/graficos/`
+(matrizes de confusão, curvas de treino, comparação de busca, diagrama da arquitetura) e
+`resultados/exemplos/` (8 exemplos reais de entrada/saída, ver `exemplos.md`).
 
 | Módulo | Métrica | Resultado |
 |---|---|---|
