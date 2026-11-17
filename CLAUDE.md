@@ -86,46 +86,65 @@ Pergunta ─► PLN: intenção (TF-IDF + NB/LR/SVM) + entidades (léxico) ─�
 
 Intenções: `identificar`, `reciclavel`, `como_descartar`, `cor_lixeira`, `onde_descartar`, `saudacao`, `fora_escopo`.
 
-## 4. Estado atual
+## 4. Estado atual (atualizado em 2026-11-17)
+
+**Ambiente**
+- Repositório git inicializado localmente (ainda sem remoto no GitHub). Venv em `.venv/`
+  (Python 3.14) com `requirements.txt` instalado; GPU CUDA disponível neste ambiente.
+- Hook de projeto exige aprovação explícita (`.claude/commit-approved`, consumido a cada uso)
+  antes de qualquer `git commit` — ver skill `commit-por-etapas`.
+- `pytest testes -q` funciona direto agora (adicionado `pytest.ini` com `pythonpath = .`;
+  antes só funcionava com `python -m pytest`).
 
 **Pronto e testado**
 - Todos os módulos implementados e integrados; o app abre e responde (testado com `streamlit.testing`).
-- O pipeline de treino da CNN e do baseline roda do começo ao fim (verificado com imagens sintéticas,
-  que já foram apagadas; nenhum resultado delas foi mantido).
-- Resultados reais já gerados:
-  - Intenções: Naive Bayes é o melhor, com F1-macro na CV de **0,811 ± 0,041** (LR 0,803; SVM 0,785).
-    No teste (25%): acurácia **0,757**, F1-macro **0,696**. Arquivo: `resultados/metricas_intencoes.json`.
-  - Busca: A* examina em média **3,13** nós e acha o caminho ótimo em 100% dos casos. Custo uniforme:
-    4,76 nós, 100%. BFS: 4,60 nós, 74,5% ótimo. Arquivos: `resultados/busca_resumo.csv` e `busca_comparacao.csv`.
+- **Tarefa 1 (visão computacional) — CONCLUÍDA com dados reais do TrashNet:**
+  CNN MobileNetV2 (teste): acurácia **0,871**, F1-macro **0,865**. Baseline HOG+SVM (teste):
+  acurácia **0,700**, F1-macro **0,697**. Splits em `dados/splits/*.csv` (commitados). Modelos
+  e imagens do dataset ficam fora do git (`modelos/`, `dados/trashnet/`).
+- **Tarefa 2 (PLN) — PARCIALMENTE feita:** `dados/intencoes.csv` ampliado de ~145 para
+  **286 frases** (146 `origem=equipe` + 140 `origem=gerado_ia`, geradas por mim, não por
+  colegas reais — está marcado na coluna `origem` do CSV para ser honesto sobre a origem).
+  F1-macro no teste subiu de 0,696 para **0,943** (melhor modelo agora é Regressão Logística,
+  CV 0,888 ± 0,057). **Ressalva importante:** frases geradas por IA tendem a ser mais
+  homogêneas que frases reais, então parte do ganho pode estar inflado — o ideal é substituir
+  as linhas `gerado_ia` por frases reais de colegas (gírias, erros de digitação variados) e
+  re-rodar `python -m src.pln.intencoes` para ver se o F1 real se mantém.
+- **Tarefa 4 (exemplos) — CONCLUÍDA:** 8 exemplos reais em `resultados/exemplos/` (imagem do
+  split de teste + pergunta → resposta do agente + regras), gerados pelo pipeline completo
+  (CNN real + PLN real + agente + A*). Inclui um erro real da CNN (papelão confundido com
+  papel) — útil para a seção de limitações do artigo.
+- **Tarefa 5 (artigo) — RASCUNHO pronto, não compilado:** `artigo/main.tex` +
+  `artigo/referencias.bib` com os números reais acima. Não há LaTeX instalado neste ambiente
+  (precisaria de `sudo apt install texlive-...`, que exige senha interativa), então só foi
+  validado manualmente (braces/ambientes balanceados, figuras existem nos caminhos citados).
+  **Falta:** compilar no Overleaf e conferir se cabe em 6 páginas, preencher integrantes e
+  link do GitHub (ver pendências em `artigo/README.md`).
 
-**Ainda NÃO feito**
-- A CNN e o baseline ainda não foram treinados no TrashNet real (o download estava bloqueado no
-  ambiente onde o código foi escrito).
+**Ainda NÃO feito (precisa de ação humana, não dá pra automatizar com integridade)**
+- **Tarefa 2 completa:** trocar as 140 frases `gerado_ia` por frases reais de colegas.
+- **Tarefa 3 (teste de campo):** precisa de ~20 fotos reais por classe tiradas pela equipe
+  em `dados/teste_campo/<classe>/`, e do script `avaliar_campo.py` (ainda não escrito).
+- **Tarefa 6:** nome dos integrantes, link do Overleaf, push pro GitHub, e (opcional)
+  substituir os pontos de coleta simulados por dados oficiais de Maceió.
 
 ## 5. Próximas tarefas (em ordem)
 
-### Tarefa 1: Treinar e avaliar a Visão Computacional
-```bash
-pip install -r requirements.txt
-python -m src.visao_computacional.dataset --baixar --dividir
-python -m src.visao_computacional.treinar --epocas 8 --epocas-ft 6
-python -m src.machine_learning.baseline_svm
-```
-- Se o download falhar, baixe `data/dataset-resized.zip` de https://github.com/garythung/trashnet,
-  coloque em `dados/` e rode `--baixar` de novo (o script reaproveita o zip local).
-- Sem GPU, considere criar `notebooks/treino_colab.ipynb`, que clona o repositório e roda os mesmos comandos no Colab.
-- Faça commit de `dados/splits/*.csv` (reprodutibilidade). Não faça commit de modelos nem de imagens.
-- Preencha a tabela de resultados do README com os valores de `resultados/metricas_cnn.json` e `metricas_baseline_svm.json`.
+### Tarefa 1: Treinar e avaliar a Visão Computacional — ✅ CONCLUÍDA (2026-11-17)
+CNN 0,871/0,865 (acurácia/F1), baseline 0,700/0,697. Ver seção 4.
 
-### Tarefa 2: Melhorar o dataset de PLN
-- O F1 de 0,70 no teste é baixo por causa do tamanho do dataset. Amplie `dados/intencoes.csv` para
-  pelo menos 40 frases por intenção, de preferência frases reais coletadas com colegas (variar a
-  escrita, incluir gírias e erros de digitação).
-- Rode `python -m src.pln.intencoes` de novo e atualize o README.
+### Tarefa 2: Melhorar o dataset de PLN — ⚠️ PARCIAL (2026-11-17)
+`dados/intencoes.csv` já tem ≥ 40 frases/intenção, mas 140 delas são `origem=gerado_ia`
+(geradas por mim), não frases reais de colegas. **O que falta de verdade:**
+- Substituir as linhas `origem=gerado_ia` por frases reais coletadas com colegas (gírias,
+  erros de digitação, jeitos diferentes de perguntar a mesma coisa).
+- Rodar `python -m src.pln.intencoes` de novo e comparar o F1 com o 0,943 atual — se cair
+  bastante, é sinal de que o modelo anterior estava mais otimista do que deveria por causa
+  da homogeneidade das frases geradas; registrar isso no artigo (Seção IV já tem a ressalva).
 - Opcional: comparar com embeddings (`sentence-transformers`, ex. `paraphrase-multilingual-MiniLM-L12-v2`)
   + regressão logística, como experimento extra.
 
-### Tarefa 3: Teste em campo (fortalece Experimentos e Limitações)
+### Tarefa 3: Teste em campo (fortalece Experimentos e Limitações) — ❌ PENDENTE (precisa de fotos reais)
 - A equipe fotografa cerca de 20 resíduos reais por classe (fundo comum, celular).
 - Crie `dados/teste_campo/<classe>/` e um script `src/visao_computacional/avaliar_campo.py` que
   avalia o modelo salvo nessas fotos e gera `resultados/metricas_cnn_campo.json` + matriz de confusão.
@@ -133,23 +152,21 @@ python -m src.machine_learning.baseline_svm
 - Avalie também a regra de confiança: em quantos erros da CNN o agente pediu nova foto
   (taxa de recusa × acurácia entre as respostas aceitas). Isso dá um bom gráfico para o artigo.
 
-### Tarefa 4: Exemplos de entrada e saída
-- Gere 6–10 exemplos (imagem + pergunta → resposta + regras) e salve em `resultados/exemplos/`
-  (PNG ou Markdown). O enunciado exige exemplos de entrada e saída.
+### Tarefa 4: Exemplos de entrada e saída — ✅ CONCLUÍDA (2026-11-17)
+8 exemplos reais em `resultados/exemplos/` (script usado: ver histórico do git; pode ser
+regerado/ampliado facilmente adaptando a lista `CASOS` do script que gerou os arquivos atuais).
 
-### Tarefa 5: Artigo (IEEE, ≤ 6 páginas)
-- Crie `artigo/main.tex` com `\documentclass[conference]{IEEEtran}` e `artigo/referencias.bib`.
-- Use só números de `resultados/`. Figuras: diagrama da arquitetura, curvas da CNN, matrizes de
-  confusão (CNN e intenções), gráfico de nós expandidos. Tabelas: CNN × baseline, comparação dos
-  classificadores de intenção, A* × custo uniforme × BFS.
-- Inclua o link do GitHub. Linguagem técnica e impessoal.
-- Referências já listadas no README: Thung & Yang (2016), Sandler et al. (2018, MobileNetV2),
-  Hart, Nilsson & Raphael (1968, A*), Dalal & Triggs (2005, HOG), CONAMA 275/2001.
-  Verifique cada uma antes de citar.
+### Tarefa 5: Artigo (IEEE, ≤ 6 páginas) — ⚠️ RASCUNHO pronto, falta compilar
+`artigo/main.tex` + `artigo/referencias.bib` escritos com os números reais de `resultados/`.
+**Falta:** compilar no Overleaf (ambiente de desenvolvimento não tem LaTeX) e conferir se
+cabe em 6 páginas; preencher integrantes e link do GitHub (marcados como `preencher` no
+`.tex`). Ver pendências detalhadas em `artigo/README.md`.
 
-### Tarefa 6: Acabamento
-- Preencher integrantes e o link do Overleaf no README.
-- Conferir que um clone limpo + os comandos do README reproduz tudo.
+### Tarefa 6: Acabamento — ❌ PENDENTE
+- Preencher integrantes e o link do Overleaf no README e no `artigo/main.tex`.
+- Criar o repositório no GitHub e dar `git push` (hoje o repo só existe localmente).
+- Conferir que um clone limpo + os comandos do README reproduz tudo (não testado ainda —
+  só foi validado rodando os comandos diretamente neste ambiente, não em um clone à parte).
 - Opcional: substituir os pontos simulados por ecopontos oficiais de Maceió, citando a fonte.
 
 ## 6. Comandos úteis
@@ -162,6 +179,8 @@ streamlit run app.py                         # interface
 
 ## 7. Limitações conhecidas (devem aparecer no artigo)
 - TrashNet: fundo branco, um objeto por foto e cerca de 2.500 imagens → mudança de domínio em fotos reais.
-- Dataset de intenções pequeno e escrito pela equipe.
+- Dataset de intenções: 146 frases da equipe + 140 geradas por IA (`origem` no CSV); o F1 de
+  0,94 pode estar inflado pela homogeneidade das frases geradas — ideal é trocá-las por frases
+  reais de colegas antes de reportar esse número como definitivo no artigo.
 - Mapa e pontos de coleta simulados; distância = linha reta × fator viário de 1,3.
 - Resíduos especiais (pilhas, eletrônicos, óleo, lâmpadas) fora das classes.
