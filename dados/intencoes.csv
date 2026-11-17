@@ -1,0 +1,147 @@
+texto,intencao
+o que é isso?,identificar
+que material é esse?,identificar
+do que é feito esse objeto,identificar
+qual o tipo desse lixo,identificar
+isso aqui é plástico ou vidro?,identificar
+consegue identificar esse resíduo?,identificar
+me diz o que tem na foto,identificar
+que tipo de material aparece na imagem,identificar
+isso é papel ou papelão,identificar
+o que você reconheceu na foto?,identificar
+classifica esse objeto pra mim,identificar
+qual a categoria desse item,identificar
+isso é metal?,identificar
+que coisa é essa,identificar
+vc sabe que material é esse,identificar
+identifica o lixo da imagem,identificar
+isso conta como plástico?,identificar
+qual material você está vendo,identificar
+esse objeto é de que material,identificar
+reconhece o que é isso,identificar
+o que foi detectado,identificar
+que lixo é esse aqui,identificar
+isso é reciclável?,reciclavel
+dá pra reciclar isso?,reciclavel
+esse material pode ser reciclado?,reciclavel
+da pra reaproveitar esse lixo,reciclavel
+isso vai pra reciclagem?,reciclavel
+é reciclável ou não,reciclavel
+posso colocar isso na coleta seletiva?,reciclavel
+esse item tem reciclagem,reciclavel
+alguém recicla isso?,reciclavel
+vale a pena separar pra reciclar,reciclavel
+isso é lixo comum ou reciclável,reciclavel
+esse tipo de material recicla?,reciclavel
+garrafa pet é reciclável?,reciclavel
+papel engordurado recicla?,reciclavel
+latinha pode reciclar,reciclavel
+vidro quebrado é reciclável,reciclavel
+isso entra na coleta seletiva,reciclavel
+tem como reciclar esse objeto,reciclavel
+esse resíduo é reaproveitável?,reciclavel
+pode ir pro reciclável?,reciclavel
+reciclam isso aqui?,reciclavel
+é coisa de reciclar?,reciclavel
+como eu descarto isso?,como_descartar
+qual o jeito certo de jogar fora,como_descartar
+preciso lavar antes de descartar?,como_descartar
+como devo separar esse lixo,como_descartar
+tem que tirar a tampa?,como_descartar
+como jogo isso fora corretamente,como_descartar
+qual o procedimento de descarte,como_descartar
+preciso amassar a lata?,como_descartar
+como embalo vidro quebrado,como_descartar
+o que faço com isso,como_descartar
+como descartar esse material,como_descartar
+tem algum cuidado antes de jogar fora?,como_descartar
+como preparo isso pra coleta,como_descartar
+devo dobrar a caixa de papelão?,como_descartar
+posso jogar no lixo de casa,como_descartar
+qual a forma correta de descarte,como_descartar
+como se livra disso,como_descartar
+me ensina a descartar,como_descartar
+o que eu faço com esse resíduo,como_descartar
+precisa limpar?,como_descartar
+como separar pra coleta seletiva,como_descartar
+onde eu levo isso?,onde_descartar
+onde descartar esse material,onde_descartar
+qual o ecoponto mais perto,onde_descartar
+onde fica o ponto de coleta mais próximo,onde_descartar
+tem algum lugar perto que recebe isso?,onde_descartar
+pra onde levo esse lixo,onde_descartar
+onde posso entregar isso,onde_descartar
+qual o local de descarte mais próximo,onde_descartar
+onde tem coleta de vidro,onde_descartar
+me mostra o caminho até o ponto de coleta,onde_descartar
+estou na ponta verde onde levo isso,onde_descartar
+onde jogo isso perto de mim,onde_descartar
+existe ponto de entrega voluntária aqui perto,onde_descartar
+qual cooperativa recebe esse material,onde_descartar
+onde fica o ecoponto,onde_descartar
+onde deixo isso,onde_descartar
+qual o lugar certo pra levar,onde_descartar
+como chego no ponto de coleta,onde_descartar
+onde tem reciclagem perto,onde_descartar
+algum ponto de coleta no jacintinho?,onde_descartar
+local mais próximo pra entregar,onde_descartar
+qual a cor da lixeira?,cor_lixeira
+em qual lixeira eu jogo,cor_lixeira
+que cor de lixeira é pra isso,cor_lixeira
+vai na lixeira azul ou vermelha?,cor_lixeira
+qual cor da coleta seletiva,cor_lixeira
+qual contêiner usar,cor_lixeira
+coloco na lixeira amarela?,cor_lixeira
+é a lixeira verde?,cor_lixeira
+qual a cor certa,cor_lixeira
+em que cesto vai isso,cor_lixeira
+que lixeira devo usar,cor_lixeira
+cor do coletor pra esse material,cor_lixeira
+lixeira de que cor,cor_lixeira
+vai no azul?,cor_lixeira
+qual recipiente colorido usar,cor_lixeira
+qual lixeira colorida é a certa,cor_lixeira
+qual a cor do coletor,cor_lixeira
+é na cinza?,cor_lixeira
+qual cor pra jogar,cor_lixeira
+a lixeira é de qual cor,cor_lixeira
+oi,saudacao
+olá,saudacao
+bom dia,saudacao
+boa tarde,saudacao
+boa noite,saudacao
+obrigado,saudacao
+valeu,saudacao
+oi tudo bem?,saudacao
+e aí,saudacao
+muito obrigada,saudacao
+tchau,saudacao
+até mais,saudacao
+opa,saudacao
+obrigado pela ajuda,saudacao
+olá assistente,saudacao
+salve,saudacao
+brigado,saudacao
+oii,saudacao
+valeu pela ajuda,saudacao
+boa,saudacao
+qual a previsão do tempo,fora_escopo
+me conta uma piada,fora_escopo
+quem ganhou o jogo ontem,fora_escopo
+qual a capital da frança,fora_escopo
+faz uma receita de bolo,fora_escopo
+quanto é 2 mais 2,fora_escopo
+toca uma música,fora_escopo
+qual o melhor celular,fora_escopo
+me ajuda com o dever de casa,fora_escopo
+que horas são,fora_escopo
+quem é o presidente,fora_escopo
+recomenda um filme,fora_escopo
+como está o trânsito,fora_escopo
+traduz isso pro inglês,fora_escopo
+qual seu nome,fora_escopo
+escreve um poema,fora_escopo
+quanto custa um iphone,fora_escopo
+como faço pra emagrecer,fora_escopo
+me fala sobre futebol,fora_escopo
+onde fica a praia mais bonita,fora_escopo

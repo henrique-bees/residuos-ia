@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Dataset (baixado pelo script) e modelos (gerados pelo treino)
+dados/trashnet/
+dados/*.zip
+modelos/*
+!modelos/.gitkeep
+
+.streamlit/secrets.toml
+.env

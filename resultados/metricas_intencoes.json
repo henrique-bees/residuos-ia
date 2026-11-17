@@ -1,0 +1,63 @@
+{
+  "acuracia": 0.7567567567567568,
+  "f1_macro": 0.6960372960372961,
+  "por_classe": {
+    "como_descartar": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1-score": 0.8,
+      "support": 5.0
+    },
+    "cor_lixeira": {
+      "precision": 0.7142857142857143,
+      "recall": 1.0,
+      "f1-score": 0.8333333333333334,
+      "support": 5.0
+    },
+    "fora_escopo": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "identificar": {
+      "precision": 0.7142857142857143,
+      "recall": 0.8333333333333334,
+      "f1-score": 0.7692307692307693,
+      "support": 6.0
+    },
+    "onde_descartar": {
+      "precision": 0.7142857142857143,
+      "recall": 1.0,
+      "f1-score": 0.8333333333333334,
+      "support": 5.0
+    },
+    "reciclavel": {
+      "precision": 0.8,
+      "recall": 0.6666666666666666,
+      "f1-score": 0.7272727272727273,
+      "support": 6.0
+    },
+    "saudacao": {
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "f1-score": 0.9090909090909091,
+      "support": 5.0
+    }
+  },
+  "comparacao_cv": {
+    "regressao_logistica": {
+      "f1_macro_cv_media": 0.8031519274376416,
+      "f1_macro_cv_desvio": 0.04359214483298578
+    },
+    "naive_bayes": {
+      "f1_macro_cv_media": 0.8107709750566892,
+      "f1_macro_cv_desvio": 0.0412547005691994
+    },
+    "svm_linear": {
+      "f1_macro_cv_media": 0.7853597196454339,
+      "f1_macro_cv_desvio": 0.062036469470769656
+    }
+  },
+  "modelo_escolhido": "naive_bayes"
+}

@@ -1,0 +1,331 @@
+algoritmo,origem,material,distancia_km,nos_expandidos,bairros_no_caminho
+A*,Jaraguá,cardboard,3.32,4,3
+Custo uniforme,Jaraguá,cardboard,3.32,6,3
+BFS,Jaraguá,cardboard,3.46,6,3
+A*,Jaraguá,paper,3.32,4,3
+Custo uniforme,Jaraguá,paper,3.32,6,3
+BFS,Jaraguá,paper,3.46,6,3
+A*,Jaraguá,plastic,3.32,4,3
+Custo uniforme,Jaraguá,plastic,3.32,6,3
+BFS,Jaraguá,plastic,3.46,6,3
+A*,Jaraguá,metal,0.0,1,1
+Custo uniforme,Jaraguá,metal,0.0,1,1
+BFS,Jaraguá,metal,0.0,1,1
+A*,Jaraguá,glass,3.12,3,3
+Custo uniforme,Jaraguá,glass,3.12,5,3
+BFS,Jaraguá,glass,3.12,8,3
+A*,Centro,cardboard,1.79,2,2
+Custo uniforme,Centro,cardboard,1.79,4,2
+BFS,Centro,cardboard,1.79,4,2
+A*,Centro,paper,1.79,2,2
+Custo uniforme,Centro,paper,1.79,4,2
+BFS,Centro,paper,1.79,4,2
+A*,Centro,plastic,1.79,2,2
+Custo uniforme,Centro,plastic,1.79,4,2
+BFS,Centro,plastic,1.79,4,2
+A*,Centro,metal,1.67,2,2
+Custo uniforme,Centro,metal,1.67,3,2
+BFS,Centro,metal,1.67,2,2
+A*,Centro,glass,4.79,5,4
+Custo uniforme,Centro,glass,4.79,11,4
+BFS,Centro,glass,4.79,12,4
+A*,Poço,cardboard,1.99,2,2
+Custo uniforme,Poço,cardboard,1.99,5,2
+BFS,Poço,cardboard,1.99,5,2
+A*,Poço,paper,1.99,2,2
+Custo uniforme,Poço,paper,1.99,5,2
+BFS,Poço,paper,1.99,5,2
+A*,Poço,plastic,1.99,2,2
+Custo uniforme,Poço,plastic,1.99,5,2
+BFS,Poço,plastic,1.99,5,2
+A*,Poço,metal,1.33,2,2
+Custo uniforme,Poço,metal,1.33,2,2
+BFS,Poço,metal,1.33,2,2
+A*,Poço,glass,3.57,4,3
+Custo uniforme,Poço,glass,3.57,7,3
+BFS,Poço,glass,3.57,8,3
+A*,Pajuçara,cardboard,3.66,5,3
+Custo uniforme,Pajuçara,cardboard,3.66,6,3
+BFS,Pajuçara,cardboard,3.66,6,3
+A*,Pajuçara,paper,3.66,5,3
+Custo uniforme,Pajuçara,paper,3.66,6,3
+BFS,Pajuçara,paper,3.66,6,3
+A*,Pajuçara,plastic,3.66,5,3
+Custo uniforme,Pajuçara,plastic,3.66,6,3
+BFS,Pajuçara,plastic,3.66,6,3
+A*,Pajuçara,metal,1.22,2,2
+Custo uniforme,Pajuçara,metal,1.22,2,2
+BFS,Pajuçara,metal,1.22,2,2
+A*,Pajuçara,glass,1.9,2,2
+Custo uniforme,Pajuçara,glass,1.9,4,2
+BFS,Pajuçara,glass,1.9,4,2
+A*,Ponta Verde,cardboard,2.07,2,2
+Custo uniforme,Ponta Verde,cardboard,2.07,3,2
+BFS,Ponta Verde,cardboard,2.07,3,2
+A*,Ponta Verde,paper,2.07,2,2
+Custo uniforme,Ponta Verde,paper,2.07,3,2
+BFS,Ponta Verde,paper,2.07,3,2
+A*,Ponta Verde,plastic,2.07,2,2
+Custo uniforme,Ponta Verde,plastic,2.07,3,2
+BFS,Ponta Verde,plastic,2.07,3,2
+A*,Ponta Verde,metal,2.07,2,2
+Custo uniforme,Ponta Verde,metal,2.07,3,2
+BFS,Ponta Verde,metal,2.07,3,2
+A*,Ponta Verde,glass,0.0,1,1
+Custo uniforme,Ponta Verde,glass,0.0,1,1
+BFS,Ponta Verde,glass,0.0,1,1
+A*,Jatiúca,cardboard,0.0,1,1
+Custo uniforme,Jatiúca,cardboard,0.0,1,1
+BFS,Jatiúca,cardboard,0.0,1,1
+A*,Jatiúca,paper,0.0,1,1
+Custo uniforme,Jatiúca,paper,0.0,1,1
+BFS,Jatiúca,paper,0.0,1,1
+A*,Jatiúca,plastic,0.0,1,1
+Custo uniforme,Jatiúca,plastic,0.0,1,1
+BFS,Jatiúca,plastic,0.0,1,1
+A*,Jatiúca,metal,0.0,1,1
+Custo uniforme,Jatiúca,metal,0.0,1,1
+BFS,Jatiúca,metal,0.0,1,1
+A*,Jatiúca,glass,0.0,1,1
+Custo uniforme,Jatiúca,glass,0.0,1,1
+BFS,Jatiúca,glass,0.0,1,1
+A*,Mangabeiras,cardboard,1.31,2,2
+Custo uniforme,Mangabeiras,cardboard,1.31,3,2
+BFS,Mangabeiras,cardboard,1.31,4,2
+A*,Mangabeiras,paper,1.31,2,2
+Custo uniforme,Mangabeiras,paper,1.31,3,2
+BFS,Mangabeiras,paper,1.31,4,2
+A*,Mangabeiras,plastic,1.31,2,2
+Custo uniforme,Mangabeiras,plastic,1.31,3,2
+BFS,Mangabeiras,plastic,1.31,4,2
+A*,Mangabeiras,metal,1.31,2,2
+Custo uniforme,Mangabeiras,metal,1.31,3,2
+BFS,Mangabeiras,metal,1.31,4,2
+A*,Mangabeiras,glass,1.31,2,2
+Custo uniforme,Mangabeiras,glass,1.31,3,2
+BFS,Mangabeiras,glass,2.88,3,2
+A*,Cruz das Almas,cardboard,2.56,2,2
+Custo uniforme,Cruz das Almas,cardboard,2.56,2,2
+BFS,Cruz das Almas,cardboard,2.56,2,2
+A*,Cruz das Almas,paper,2.56,2,2
+Custo uniforme,Cruz das Almas,paper,2.56,2,2
+BFS,Cruz das Almas,paper,2.56,2,2
+A*,Cruz das Almas,plastic,2.56,2,2
+Custo uniforme,Cruz das Almas,plastic,2.56,2,2
+BFS,Cruz das Almas,plastic,2.56,2,2
+A*,Cruz das Almas,metal,2.56,2,2
+Custo uniforme,Cruz das Almas,metal,2.56,2,2
+BFS,Cruz das Almas,metal,2.56,2,2
+A*,Cruz das Almas,glass,2.56,2,2
+Custo uniforme,Cruz das Almas,glass,2.56,2,2
+BFS,Cruz das Almas,glass,2.56,2,2
+A*,Jacarecica,cardboard,5.16,3,3
+Custo uniforme,Jacarecica,cardboard,5.16,5,3
+BFS,Jacarecica,cardboard,5.16,4,3
+A*,Jacarecica,paper,5.16,3,3
+Custo uniforme,Jacarecica,paper,5.16,5,3
+BFS,Jacarecica,paper,5.16,4,3
+A*,Jacarecica,plastic,5.16,3,3
+Custo uniforme,Jacarecica,plastic,5.16,5,3
+BFS,Jacarecica,plastic,5.16,4,3
+A*,Jacarecica,metal,5.16,3,3
+Custo uniforme,Jacarecica,metal,5.16,5,3
+BFS,Jacarecica,metal,5.16,4,3
+A*,Jacarecica,glass,5.16,3,3
+Custo uniforme,Jacarecica,glass,5.16,5,3
+BFS,Jacarecica,glass,5.16,4,3
+A*,Jacintinho,cardboard,2.53,3,3
+Custo uniforme,Jacintinho,cardboard,2.53,4,3
+BFS,Jacintinho,cardboard,2.98,5,2
+A*,Jacintinho,paper,2.53,3,3
+Custo uniforme,Jacintinho,paper,2.53,4,3
+BFS,Jacintinho,paper,2.98,5,2
+A*,Jacintinho,plastic,2.53,3,3
+Custo uniforme,Jacintinho,plastic,2.53,4,3
+BFS,Jacintinho,plastic,2.98,5,2
+A*,Jacintinho,metal,2.53,3,3
+Custo uniforme,Jacintinho,metal,2.53,4,3
+BFS,Jacintinho,metal,2.53,8,3
+A*,Jacintinho,glass,2.53,3,3
+Custo uniforme,Jacintinho,glass,2.53,4,3
+BFS,Jacintinho,glass,4.09,7,3
+A*,Farol,cardboard,0.0,1,1
+Custo uniforme,Farol,cardboard,0.0,1,1
+BFS,Farol,cardboard,0.0,1,1
+A*,Farol,paper,0.0,1,1
+Custo uniforme,Farol,paper,0.0,1,1
+BFS,Farol,paper,0.0,1,1
+A*,Farol,plastic,0.0,1,1
+Custo uniforme,Farol,plastic,0.0,1,1
+BFS,Farol,plastic,0.0,1,1
+A*,Farol,metal,3.32,4,3
+Custo uniforme,Farol,metal,3.32,7,3
+BFS,Farol,metal,3.46,7,3
+A*,Farol,glass,5.51,7,4
+Custo uniforme,Farol,glass,5.51,13,4
+BFS,Farol,glass,5.56,15,4
+A*,Pinheiro,cardboard,2.52,2,2
+Custo uniforme,Pinheiro,cardboard,2.52,3,2
+BFS,Pinheiro,cardboard,2.52,2,2
+A*,Pinheiro,paper,2.52,2,2
+Custo uniforme,Pinheiro,paper,2.52,3,2
+BFS,Pinheiro,paper,2.52,2,2
+A*,Pinheiro,plastic,2.52,2,2
+Custo uniforme,Pinheiro,plastic,2.52,3,2
+BFS,Pinheiro,plastic,2.52,2,2
+A*,Pinheiro,metal,5.84,6,4
+Custo uniforme,Pinheiro,metal,5.84,10,4
+BFS,Pinheiro,metal,8.81,9,3
+A*,Pinheiro,glass,7.3,8,6
+Custo uniforme,Pinheiro,glass,7.3,15,6
+BFS,Pinheiro,glass,8.81,9,3
+A*,Gruta de Lourdes,cardboard,3.01,2,2
+Custo uniforme,Gruta de Lourdes,cardboard,3.01,4,2
+BFS,Gruta de Lourdes,cardboard,3.01,2,2
+A*,Gruta de Lourdes,paper,3.01,2,2
+Custo uniforme,Gruta de Lourdes,paper,3.01,4,2
+BFS,Gruta de Lourdes,paper,3.01,2,2
+A*,Gruta de Lourdes,plastic,3.01,2,2
+Custo uniforme,Gruta de Lourdes,plastic,3.01,4,2
+BFS,Gruta de Lourdes,plastic,3.01,2,2
+A*,Gruta de Lourdes,metal,5.81,7,5
+Custo uniforme,Gruta de Lourdes,metal,5.81,12,5
+BFS,Gruta de Lourdes,metal,6.47,10,4
+A*,Gruta de Lourdes,glass,5.81,6,5
+Custo uniforme,Gruta de Lourdes,glass,5.81,12,5
+BFS,Gruta de Lourdes,glass,10.3,15,4
+A*,Feitosa,cardboard,4.27,5,4
+Custo uniforme,Feitosa,cardboard,4.27,8,4
+BFS,Feitosa,cardboard,4.72,7,3
+A*,Feitosa,paper,4.27,5,4
+Custo uniforme,Feitosa,paper,4.27,8,4
+BFS,Feitosa,paper,4.72,7,3
+A*,Feitosa,plastic,4.27,5,4
+Custo uniforme,Feitosa,plastic,4.27,8,4
+BFS,Feitosa,plastic,4.72,7,3
+A*,Feitosa,metal,4.27,4,4
+Custo uniforme,Feitosa,metal,4.27,8,4
+BFS,Feitosa,metal,4.27,13,4
+A*,Feitosa,glass,4.27,4,4
+Custo uniforme,Feitosa,glass,4.27,8,4
+BFS,Feitosa,glass,5.83,12,4
+A*,Barro Duro,cardboard,6.02,6,5
+Custo uniforme,Barro Duro,cardboard,6.02,9,5
+BFS,Barro Duro,cardboard,10.18,8,3
+A*,Barro Duro,paper,6.02,6,5
+Custo uniforme,Barro Duro,paper,6.02,9,5
+BFS,Barro Duro,paper,10.18,8,3
+A*,Barro Duro,plastic,6.02,6,5
+Custo uniforme,Barro Duro,plastic,6.02,9,5
+BFS,Barro Duro,plastic,10.18,8,3
+A*,Barro Duro,metal,6.02,5,5
+Custo uniforme,Barro Duro,metal,6.02,9,5
+BFS,Barro Duro,metal,10.18,8,3
+A*,Barro Duro,glass,6.02,5,5
+Custo uniforme,Barro Duro,glass,6.02,9,5
+BFS,Barro Duro,glass,10.51,9,3
+A*,Serraria,cardboard,7.98,9,6
+Custo uniforme,Serraria,cardboard,7.98,11,6
+BFS,Serraria,cardboard,8.22,5,2
+A*,Serraria,paper,7.98,9,6
+Custo uniforme,Serraria,paper,7.98,11,6
+BFS,Serraria,paper,8.22,5,2
+A*,Serraria,plastic,7.98,9,6
+Custo uniforme,Serraria,plastic,7.98,11,6
+BFS,Serraria,plastic,8.22,5,2
+A*,Serraria,metal,7.98,8,6
+Custo uniforme,Serraria,metal,7.98,11,6
+BFS,Serraria,metal,8.22,5,2
+A*,Serraria,glass,7.98,8,6
+Custo uniforme,Serraria,glass,7.98,11,6
+BFS,Serraria,glass,9.08,8,3
+A*,Prado,cardboard,4.03,3,3
+Custo uniforme,Prado,cardboard,4.03,6,3
+BFS,Prado,cardboard,4.03,5,3
+A*,Prado,paper,4.03,3,3
+Custo uniforme,Prado,paper,4.03,6,3
+BFS,Prado,paper,4.03,5,3
+A*,Prado,plastic,4.03,3,3
+Custo uniforme,Prado,plastic,4.03,6,3
+BFS,Prado,plastic,4.03,5,3
+A*,Prado,metal,3.91,3,3
+Custo uniforme,Prado,metal,3.91,5,3
+BFS,Prado,metal,3.91,4,3
+A*,Prado,glass,7.03,6,5
+Custo uniforme,Prado,glass,7.03,11,5
+BFS,Prado,glass,7.03,12,5
+A*,Trapiche da Barra,cardboard,5.46,4,4
+Custo uniforme,Trapiche da Barra,cardboard,5.46,6,4
+BFS,Trapiche da Barra,cardboard,5.46,5,4
+A*,Trapiche da Barra,paper,5.46,4,4
+Custo uniforme,Trapiche da Barra,paper,5.46,6,4
+BFS,Trapiche da Barra,paper,5.46,5,4
+A*,Trapiche da Barra,plastic,5.46,4,4
+Custo uniforme,Trapiche da Barra,plastic,5.46,6,4
+BFS,Trapiche da Barra,plastic,5.46,5,4
+A*,Trapiche da Barra,metal,5.34,4,4
+Custo uniforme,Trapiche da Barra,metal,5.34,5,4
+BFS,Trapiche da Barra,metal,5.34,4,4
+A*,Trapiche da Barra,glass,8.46,7,6
+Custo uniforme,Trapiche da Barra,glass,8.46,11,6
+BFS,Trapiche da Barra,glass,8.46,12,6
+A*,Bebedouro,cardboard,4.8,2,2
+Custo uniforme,Bebedouro,cardboard,4.8,3,2
+BFS,Bebedouro,cardboard,4.8,3,2
+A*,Bebedouro,paper,4.8,2,2
+Custo uniforme,Bebedouro,paper,4.8,3,2
+BFS,Bebedouro,paper,4.8,3,2
+A*,Bebedouro,plastic,4.8,2,2
+Custo uniforme,Bebedouro,plastic,4.8,3,2
+BFS,Bebedouro,plastic,4.8,3,2
+A*,Bebedouro,metal,4.8,2,2
+Custo uniforme,Bebedouro,metal,4.8,3,2
+BFS,Bebedouro,metal,4.8,3,2
+A*,Bebedouro,glass,4.8,2,2
+Custo uniforme,Bebedouro,glass,4.8,3,2
+BFS,Bebedouro,glass,4.8,3,2
+A*,Tabuleiro do Martins,cardboard,0.0,1,1
+Custo uniforme,Tabuleiro do Martins,cardboard,0.0,1,1
+BFS,Tabuleiro do Martins,cardboard,0.0,1,1
+A*,Tabuleiro do Martins,paper,0.0,1,1
+Custo uniforme,Tabuleiro do Martins,paper,0.0,1,1
+BFS,Tabuleiro do Martins,paper,0.0,1,1
+A*,Tabuleiro do Martins,plastic,0.0,1,1
+Custo uniforme,Tabuleiro do Martins,plastic,0.0,1,1
+BFS,Tabuleiro do Martins,plastic,0.0,1,1
+A*,Tabuleiro do Martins,metal,0.0,1,1
+Custo uniforme,Tabuleiro do Martins,metal,0.0,1,1
+BFS,Tabuleiro do Martins,metal,0.0,1,1
+A*,Tabuleiro do Martins,glass,0.0,1,1
+Custo uniforme,Tabuleiro do Martins,glass,0.0,1,1
+BFS,Tabuleiro do Martins,glass,0.0,1,1
+A*,Antares,cardboard,3.89,2,2
+Custo uniforme,Antares,cardboard,3.89,2,2
+BFS,Antares,cardboard,3.89,4,2
+A*,Antares,paper,3.89,2,2
+Custo uniforme,Antares,paper,3.89,2,2
+BFS,Antares,paper,3.89,4,2
+A*,Antares,plastic,3.89,2,2
+Custo uniforme,Antares,plastic,3.89,2,2
+BFS,Antares,plastic,3.89,4,2
+A*,Antares,metal,3.89,2,2
+Custo uniforme,Antares,metal,3.89,2,2
+BFS,Antares,metal,3.89,4,2
+A*,Antares,glass,3.89,2,2
+Custo uniforme,Antares,glass,3.89,2,2
+BFS,Antares,glass,3.89,4,2
+A*,Benedito Bentes,cardboard,0.0,1,1
+Custo uniforme,Benedito Bentes,cardboard,0.0,1,1
+BFS,Benedito Bentes,cardboard,0.0,1,1
+A*,Benedito Bentes,paper,0.0,1,1
+Custo uniforme,Benedito Bentes,paper,0.0,1,1
+BFS,Benedito Bentes,paper,0.0,1,1
+A*,Benedito Bentes,plastic,0.0,1,1
+Custo uniforme,Benedito Bentes,plastic,0.0,1,1
+BFS,Benedito Bentes,plastic,0.0,1,1
+A*,Benedito Bentes,metal,0.0,1,1
+Custo uniforme,Benedito Bentes,metal,0.0,1,1
+BFS,Benedito Bentes,metal,0.0,1,1
+A*,Benedito Bentes,glass,7.91,3,3
+Custo uniforme,Benedito Bentes,glass,7.91,3,3
+BFS,Benedito Bentes,glass,7.91,6,3

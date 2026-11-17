@@ -1,0 +1,4 @@
+algoritmo,nos_expandidos_medio,distancia_media_km,pct_caminho_otimo
+A*,3.127,3.291,100.0
+BFS,4.6,3.663,74.545
+Custo uniforme,4.764,3.291,100.0
