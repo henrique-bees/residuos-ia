@@ -1,147 +1,287 @@
-texto,intencao
-o que é isso?,identificar
-que material é esse?,identificar
-do que é feito esse objeto,identificar
-qual o tipo desse lixo,identificar
-isso aqui é plástico ou vidro?,identificar
-consegue identificar esse resíduo?,identificar
-me diz o que tem na foto,identificar
-que tipo de material aparece na imagem,identificar
-isso é papel ou papelão,identificar
-o que você reconheceu na foto?,identificar
-classifica esse objeto pra mim,identificar
-qual a categoria desse item,identificar
-isso é metal?,identificar
-que coisa é essa,identificar
-vc sabe que material é esse,identificar
-identifica o lixo da imagem,identificar
-isso conta como plástico?,identificar
-qual material você está vendo,identificar
-esse objeto é de que material,identificar
-reconhece o que é isso,identificar
-o que foi detectado,identificar
-que lixo é esse aqui,identificar
-isso é reciclável?,reciclavel
-dá pra reciclar isso?,reciclavel
-esse material pode ser reciclado?,reciclavel
-da pra reaproveitar esse lixo,reciclavel
-isso vai pra reciclagem?,reciclavel
-é reciclável ou não,reciclavel
-posso colocar isso na coleta seletiva?,reciclavel
-esse item tem reciclagem,reciclavel
-alguém recicla isso?,reciclavel
-vale a pena separar pra reciclar,reciclavel
-isso é lixo comum ou reciclável,reciclavel
-esse tipo de material recicla?,reciclavel
-garrafa pet é reciclável?,reciclavel
-papel engordurado recicla?,reciclavel
-latinha pode reciclar,reciclavel
-vidro quebrado é reciclável,reciclavel
-isso entra na coleta seletiva,reciclavel
-tem como reciclar esse objeto,reciclavel
-esse resíduo é reaproveitável?,reciclavel
-pode ir pro reciclável?,reciclavel
-reciclam isso aqui?,reciclavel
-é coisa de reciclar?,reciclavel
-como eu descarto isso?,como_descartar
-qual o jeito certo de jogar fora,como_descartar
-preciso lavar antes de descartar?,como_descartar
-como devo separar esse lixo,como_descartar
-tem que tirar a tampa?,como_descartar
-como jogo isso fora corretamente,como_descartar
-qual o procedimento de descarte,como_descartar
-preciso amassar a lata?,como_descartar
-como embalo vidro quebrado,como_descartar
-o que faço com isso,como_descartar
-como descartar esse material,como_descartar
-tem algum cuidado antes de jogar fora?,como_descartar
-como preparo isso pra coleta,como_descartar
-devo dobrar a caixa de papelão?,como_descartar
-posso jogar no lixo de casa,como_descartar
-qual a forma correta de descarte,como_descartar
-como se livra disso,como_descartar
-me ensina a descartar,como_descartar
-o que eu faço com esse resíduo,como_descartar
-precisa limpar?,como_descartar
-como separar pra coleta seletiva,como_descartar
-onde eu levo isso?,onde_descartar
-onde descartar esse material,onde_descartar
-qual o ecoponto mais perto,onde_descartar
-onde fica o ponto de coleta mais próximo,onde_descartar
-tem algum lugar perto que recebe isso?,onde_descartar
-pra onde levo esse lixo,onde_descartar
-onde posso entregar isso,onde_descartar
-qual o local de descarte mais próximo,onde_descartar
-onde tem coleta de vidro,onde_descartar
-me mostra o caminho até o ponto de coleta,onde_descartar
-estou na ponta verde onde levo isso,onde_descartar
-onde jogo isso perto de mim,onde_descartar
-existe ponto de entrega voluntária aqui perto,onde_descartar
-qual cooperativa recebe esse material,onde_descartar
-onde fica o ecoponto,onde_descartar
-onde deixo isso,onde_descartar
-qual o lugar certo pra levar,onde_descartar
-como chego no ponto de coleta,onde_descartar
-onde tem reciclagem perto,onde_descartar
-algum ponto de coleta no jacintinho?,onde_descartar
-local mais próximo pra entregar,onde_descartar
-qual a cor da lixeira?,cor_lixeira
-em qual lixeira eu jogo,cor_lixeira
-que cor de lixeira é pra isso,cor_lixeira
-vai na lixeira azul ou vermelha?,cor_lixeira
-qual cor da coleta seletiva,cor_lixeira
-qual contêiner usar,cor_lixeira
-coloco na lixeira amarela?,cor_lixeira
-é a lixeira verde?,cor_lixeira
-qual a cor certa,cor_lixeira
-em que cesto vai isso,cor_lixeira
-que lixeira devo usar,cor_lixeira
-cor do coletor pra esse material,cor_lixeira
-lixeira de que cor,cor_lixeira
-vai no azul?,cor_lixeira
-qual recipiente colorido usar,cor_lixeira
-qual lixeira colorida é a certa,cor_lixeira
-qual a cor do coletor,cor_lixeira
-é na cinza?,cor_lixeira
-qual cor pra jogar,cor_lixeira
-a lixeira é de qual cor,cor_lixeira
-oi,saudacao
-olá,saudacao
-bom dia,saudacao
-boa tarde,saudacao
-boa noite,saudacao
-obrigado,saudacao
-valeu,saudacao
-oi tudo bem?,saudacao
-e aí,saudacao
-muito obrigada,saudacao
-tchau,saudacao
-até mais,saudacao
-opa,saudacao
-obrigado pela ajuda,saudacao
-olá assistente,saudacao
-salve,saudacao
-brigado,saudacao
-oii,saudacao
-valeu pela ajuda,saudacao
-boa,saudacao
-qual a previsão do tempo,fora_escopo
-me conta uma piada,fora_escopo
-quem ganhou o jogo ontem,fora_escopo
-qual a capital da frança,fora_escopo
-faz uma receita de bolo,fora_escopo
-quanto é 2 mais 2,fora_escopo
-toca uma música,fora_escopo
-qual o melhor celular,fora_escopo
-me ajuda com o dever de casa,fora_escopo
-que horas são,fora_escopo
-quem é o presidente,fora_escopo
-recomenda um filme,fora_escopo
-como está o trânsito,fora_escopo
-traduz isso pro inglês,fora_escopo
-qual seu nome,fora_escopo
-escreve um poema,fora_escopo
-quanto custa um iphone,fora_escopo
-como faço pra emagrecer,fora_escopo
-me fala sobre futebol,fora_escopo
-onde fica a praia mais bonita,fora_escopo
+texto,intencao,origem
+o que é isso?,identificar,equipe
+que material é esse?,identificar,equipe
+do que é feito esse objeto,identificar,equipe
+qual o tipo desse lixo,identificar,equipe
+isso aqui é plástico ou vidro?,identificar,equipe
+consegue identificar esse resíduo?,identificar,equipe
+me diz o que tem na foto,identificar,equipe
+que tipo de material aparece na imagem,identificar,equipe
+isso é papel ou papelão,identificar,equipe
+o que você reconheceu na foto?,identificar,equipe
+classifica esse objeto pra mim,identificar,equipe
+qual a categoria desse item,identificar,equipe
+isso é metal?,identificar,equipe
+que coisa é essa,identificar,equipe
+vc sabe que material é esse,identificar,equipe
+identifica o lixo da imagem,identificar,equipe
+isso conta como plástico?,identificar,equipe
+qual material você está vendo,identificar,equipe
+esse objeto é de que material,identificar,equipe
+reconhece o que é isso,identificar,equipe
+o que foi detectado,identificar,equipe
+que lixo é esse aqui,identificar,equipe
+isso é reciclável?,reciclavel,equipe
+dá pra reciclar isso?,reciclavel,equipe
+esse material pode ser reciclado?,reciclavel,equipe
+da pra reaproveitar esse lixo,reciclavel,equipe
+isso vai pra reciclagem?,reciclavel,equipe
+é reciclável ou não,reciclavel,equipe
+posso colocar isso na coleta seletiva?,reciclavel,equipe
+esse item tem reciclagem,reciclavel,equipe
+alguém recicla isso?,reciclavel,equipe
+vale a pena separar pra reciclar,reciclavel,equipe
+isso é lixo comum ou reciclável,reciclavel,equipe
+esse tipo de material recicla?,reciclavel,equipe
+garrafa pet é reciclável?,reciclavel,equipe
+papel engordurado recicla?,reciclavel,equipe
+latinha pode reciclar,reciclavel,equipe
+vidro quebrado é reciclável,reciclavel,equipe
+isso entra na coleta seletiva,reciclavel,equipe
+tem como reciclar esse objeto,reciclavel,equipe
+esse resíduo é reaproveitável?,reciclavel,equipe
+pode ir pro reciclável?,reciclavel,equipe
+reciclam isso aqui?,reciclavel,equipe
+é coisa de reciclar?,reciclavel,equipe
+como eu descarto isso?,como_descartar,equipe
+qual o jeito certo de jogar fora,como_descartar,equipe
+preciso lavar antes de descartar?,como_descartar,equipe
+como devo separar esse lixo,como_descartar,equipe
+tem que tirar a tampa?,como_descartar,equipe
+como jogo isso fora corretamente,como_descartar,equipe
+qual o procedimento de descarte,como_descartar,equipe
+preciso amassar a lata?,como_descartar,equipe
+como embalo vidro quebrado,como_descartar,equipe
+o que faço com isso,como_descartar,equipe
+como descartar esse material,como_descartar,equipe
+tem algum cuidado antes de jogar fora?,como_descartar,equipe
+como preparo isso pra coleta,como_descartar,equipe
+devo dobrar a caixa de papelão?,como_descartar,equipe
+posso jogar no lixo de casa,como_descartar,equipe
+qual a forma correta de descarte,como_descartar,equipe
+como se livra disso,como_descartar,equipe
+me ensina a descartar,como_descartar,equipe
+o que eu faço com esse resíduo,como_descartar,equipe
+precisa limpar?,como_descartar,equipe
+como separar pra coleta seletiva,como_descartar,equipe
+onde eu levo isso?,onde_descartar,equipe
+onde descartar esse material,onde_descartar,equipe
+qual o ecoponto mais perto,onde_descartar,equipe
+onde fica o ponto de coleta mais próximo,onde_descartar,equipe
+tem algum lugar perto que recebe isso?,onde_descartar,equipe
+pra onde levo esse lixo,onde_descartar,equipe
+onde posso entregar isso,onde_descartar,equipe
+qual o local de descarte mais próximo,onde_descartar,equipe
+onde tem coleta de vidro,onde_descartar,equipe
+me mostra o caminho até o ponto de coleta,onde_descartar,equipe
+estou na ponta verde onde levo isso,onde_descartar,equipe
+onde jogo isso perto de mim,onde_descartar,equipe
+existe ponto de entrega voluntária aqui perto,onde_descartar,equipe
+qual cooperativa recebe esse material,onde_descartar,equipe
+onde fica o ecoponto,onde_descartar,equipe
+onde deixo isso,onde_descartar,equipe
+qual o lugar certo pra levar,onde_descartar,equipe
+como chego no ponto de coleta,onde_descartar,equipe
+onde tem reciclagem perto,onde_descartar,equipe
+algum ponto de coleta no jacintinho?,onde_descartar,equipe
+local mais próximo pra entregar,onde_descartar,equipe
+qual a cor da lixeira?,cor_lixeira,equipe
+em qual lixeira eu jogo,cor_lixeira,equipe
+que cor de lixeira é pra isso,cor_lixeira,equipe
+vai na lixeira azul ou vermelha?,cor_lixeira,equipe
+qual cor da coleta seletiva,cor_lixeira,equipe
+qual contêiner usar,cor_lixeira,equipe
+coloco na lixeira amarela?,cor_lixeira,equipe
+é a lixeira verde?,cor_lixeira,equipe
+qual a cor certa,cor_lixeira,equipe
+em que cesto vai isso,cor_lixeira,equipe
+que lixeira devo usar,cor_lixeira,equipe
+cor do coletor pra esse material,cor_lixeira,equipe
+lixeira de que cor,cor_lixeira,equipe
+vai no azul?,cor_lixeira,equipe
+qual recipiente colorido usar,cor_lixeira,equipe
+qual lixeira colorida é a certa,cor_lixeira,equipe
+qual a cor do coletor,cor_lixeira,equipe
+é na cinza?,cor_lixeira,equipe
+qual cor pra jogar,cor_lixeira,equipe
+a lixeira é de qual cor,cor_lixeira,equipe
+oi,saudacao,equipe
+olá,saudacao,equipe
+bom dia,saudacao,equipe
+boa tarde,saudacao,equipe
+boa noite,saudacao,equipe
+obrigado,saudacao,equipe
+valeu,saudacao,equipe
+oi tudo bem?,saudacao,equipe
+e aí,saudacao,equipe
+muito obrigada,saudacao,equipe
+tchau,saudacao,equipe
+até mais,saudacao,equipe
+opa,saudacao,equipe
+obrigado pela ajuda,saudacao,equipe
+olá assistente,saudacao,equipe
+salve,saudacao,equipe
+brigado,saudacao,equipe
+oii,saudacao,equipe
+valeu pela ajuda,saudacao,equipe
+boa,saudacao,equipe
+qual a previsão do tempo,fora_escopo,equipe
+me conta uma piada,fora_escopo,equipe
+quem ganhou o jogo ontem,fora_escopo,equipe
+qual a capital da frança,fora_escopo,equipe
+faz uma receita de bolo,fora_escopo,equipe
+quanto é 2 mais 2,fora_escopo,equipe
+toca uma música,fora_escopo,equipe
+qual o melhor celular,fora_escopo,equipe
+me ajuda com o dever de casa,fora_escopo,equipe
+que horas são,fora_escopo,equipe
+quem é o presidente,fora_escopo,equipe
+recomenda um filme,fora_escopo,equipe
+como está o trânsito,fora_escopo,equipe
+traduz isso pro inglês,fora_escopo,equipe
+qual seu nome,fora_escopo,equipe
+escreve um poema,fora_escopo,equipe
+quanto custa um iphone,fora_escopo,equipe
+como faço pra emagrecer,fora_escopo,equipe
+me fala sobre futebol,fora_escopo,equipe
+onde fica a praia mais bonita,fora_escopo,equipe
+que q é isso,identificar,gerado_ia
+"nao sei o que é isso, me ajuda",identificar,gerado_ia
+isso aqui é de qual material,identificar,gerado_ia
+da uma olhada e me diz o que é,identificar,gerado_ia
+tipo de residuo desse aqui,identificar,gerado_ia
+esse trem é de que,identificar,gerado_ia
+que material seria esse,identificar,gerado_ia
+to na duvida se é plastico ou metal,identificar,gerado_ia
+que categoria de lixo é essa,identificar,gerado_ia
+pode falar o que é isso na foto,identificar,gerado_ia
+material desse objeto ai,identificar,gerado_ia
+isso e vidro mesmo?,identificar,gerado_ia
+qual tipo de residuo aparece aqui,identificar,gerado_ia
+me diz que coisa é essa,identificar,gerado_ia
+esse resto aqui é de que,identificar,gerado_ia
+"material da imagem, por favor",identificar,gerado_ia
+"nao identifiquei, vc consegue",identificar,gerado_ia
+que negocio é esse na foto,identificar,gerado_ia
+isso ai parece papelao ou nao,identificar,gerado_ia
+qual é o material dessa coisa,identificar,gerado_ia
+isso recicla ou n,reciclavel,gerado_ia
+pode jogar no verde?,reciclavel,gerado_ia
+da pra mandar pra reciclagem,reciclavel,gerado_ia
+isso tem valor de reciclagem,reciclavel,gerado_ia
+serve pra reciclar,reciclavel,gerado_ia
+nao sei se isso e reciclavel,reciclavel,gerado_ia
+essa coisa reciclam,reciclavel,gerado_ia
+isso vai pro lixo reciclavel mesmo,reciclavel,gerado_ia
+tem reaproveitamento pra isso,reciclavel,gerado_ia
+isso faz parte do reciclavel,reciclavel,gerado_ia
+pode por na reciclagem isso,reciclavel,gerado_ia
+isso ai reciclam?,reciclavel,gerado_ia
+caixa de pizza reciclável?,reciclavel,gerado_ia
+isopor é reciclável?,reciclavel,gerado_ia
+isso conta como reciclavel,reciclavel,gerado_ia
+da pra reciclar mesmo sujo,reciclavel,gerado_ia
+esse plastico reciclam,reciclavel,gerado_ia
+e reciclavel isso daqui,reciclavel,gerado_ia
+pode mandar pra reciclagem isso,reciclavel,gerado_ia
+essa garrafa reciclam?,reciclavel,gerado_ia
+como eu me livro disso certinho,como_descartar,gerado_ia
+precisa enxaguar antes,como_descartar,gerado_ia
+qual o jeito certo de descartar isso,como_descartar,gerado_ia
+tem que separar a tampa?,como_descartar,gerado_ia
+como faço o descarte correto,como_descartar,gerado_ia
+devo limpar isso antes de jogar,como_descartar,gerado_ia
+como eu preparo pra descartar,como_descartar,gerado_ia
+e so jogar direto no lixo?,como_descartar,gerado_ia
+precisa secar antes de descartar,como_descartar,gerado_ia
+como descarto sem sujar tudo,como_descartar,gerado_ia
+tem passo a passo pra descartar isso,como_descartar,gerado_ia
+qual cuidado eu devo ter ao descartar,como_descartar,gerado_ia
+como faço pra jogar isso fora direito,como_descartar,gerado_ia
+precisa rasgar o papel antes?,como_descartar,gerado_ia
+como eu desmonto isso pra jogar fora,como_descartar,gerado_ia
+devo tirar o rotulo antes de descartar,como_descartar,gerado_ia
+qual o procedimento certo pra isso,como_descartar,gerado_ia
+como eu faço o descarte dessa coisa,como_descartar,gerado_ia
+preciso escorrer antes de jogar fora,como_descartar,gerado_ia
+como eu preparo isso pro descarte,como_descartar,gerado_ia
+onde fica o ponto de coleta no Farol,onde_descartar,gerado_ia
+tem ecoponto no Pajuçara,onde_descartar,gerado_ia
+onde entrego isso na Jatiúca,onde_descartar,gerado_ia
+ponto de reciclagem perto do Centro,onde_descartar,gerado_ia
+onde descarto isso no Cruzeiro do Sul,onde_descartar,gerado_ia
+tem local de coleta na Ponta Verde,onde_descartar,gerado_ia
+onde fica o ponto mais próximo daqui,onde_descartar,gerado_ia
+pra onde eu levo isso no bairro Trapiche,onde_descartar,gerado_ia
+tem ecoponto perto do Tabuleiro,onde_descartar,gerado_ia
+onde recebem isso no Benedito Bentes,onde_descartar,gerado_ia
+qual o ecoponto mais próximo de mim,onde_descartar,gerado_ia
+onde descarto isso na Gruta de Lourdes,onde_descartar,gerado_ia
+tem ponto de coleta no Clima Bom,onde_descartar,gerado_ia
+onde entrego isso ali no Antares,onde_descartar,gerado_ia
+pra onde levo isso aqui perto,onde_descartar,gerado_ia
+onde fica o lugar certo pra descartar,onde_descartar,gerado_ia
+qual cooperativa fica mais perto,onde_descartar,gerado_ia
+onde posso deixar isso por aqui,onde_descartar,gerado_ia
+tem algum ponto verde aqui perto,onde_descartar,gerado_ia
+onde é o ecoponto mais proximo do Jaraguá,onde_descartar,gerado_ia
+qual cor de lixeira usar aqui,cor_lixeira,gerado_ia
+vai na lixeira marrom?,cor_lixeira,gerado_ia
+essa vai na cinza ou verde,cor_lixeira,gerado_ia
+qual coletor colorido serve,cor_lixeira,gerado_ia
+lixeira roxa é pra isso?,cor_lixeira,gerado_ia
+qual é a cor certa do cesto,cor_lixeira,gerado_ia
+vai na lixeira laranja,cor_lixeira,gerado_ia
+que cor de coletor eu uso,cor_lixeira,gerado_ia
+isso vai na lixeira preta?,cor_lixeira,gerado_ia
+qual cesto colorido eu escolho,cor_lixeira,gerado_ia
+vai no contêiner azul mesmo,cor_lixeira,gerado_ia
+qual a cor do cesto certo,cor_lixeira,gerado_ia
+essa e pra lixeira marrom?,cor_lixeira,gerado_ia
+em qual cor de lixeira isso entra,cor_lixeira,gerado_ia
+qual e a cor do coletor certo,cor_lixeira,gerado_ia
+vai no vermelho ou amarelo,cor_lixeira,gerado_ia
+qual lixeira eu uso pra isso,cor_lixeira,gerado_ia
+essa cor de lixeira serve,cor_lixeira,gerado_ia
+qual contêiner colorido eu escolho,cor_lixeira,gerado_ia
+que cesto colorido uso aqui,cor_lixeira,gerado_ia
+bom dia pra vc,saudacao,gerado_ia
+fala ai,saudacao,gerado_ia
+eae,saudacao,gerado_ia
+"oi, bom dia",saudacao,gerado_ia
+oiee,saudacao,gerado_ia
+muito obg,saudacao,gerado_ia
+flw,saudacao,gerado_ia
+ate logo,saudacao,gerado_ia
+agradecido,saudacao,gerado_ia
+oi oi,saudacao,gerado_ia
+"e ai, tudo certo?",saudacao,gerado_ia
+"ola, boa tarde",saudacao,gerado_ia
+obrigadao,saudacao,gerado_ia
+falou,saudacao,gerado_ia
+"tamo junto, obrigado",saudacao,gerado_ia
+grato pela ajuda,saudacao,gerado_ia
+"oi assistente, bom dia",saudacao,gerado_ia
+"boa noite, obrigado",saudacao,gerado_ia
+vlw flw,saudacao,gerado_ia
+ola tudo bom,saudacao,gerado_ia
+qual o resultado do jogo de hoje,fora_escopo,gerado_ia
+voce sabe cozinhar,fora_escopo,gerado_ia
+qual a senha do wifi,fora_escopo,gerado_ia
+me passa uma dica de investimento,fora_escopo,gerado_ia
+qual filme ta em cartaz,fora_escopo,gerado_ia
+voce pode me ajudar com matematica,fora_escopo,gerado_ia
+qual a letra dessa musica,fora_escopo,gerado_ia
+me indica um livro,fora_escopo,gerado_ia
+qual o preco do dolar hoje,fora_escopo,gerado_ia
+voce namora,fora_escopo,gerado_ia
+qual seu time do coracao,fora_escopo,gerado_ia
+me ajuda a escolher um nome pro meu cachorro,fora_escopo,gerado_ia
+qual a previsao pra amanha,fora_escopo,gerado_ia
+voce sabe programar,fora_escopo,gerado_ia
+qual o seu signo,fora_escopo,gerado_ia
+me fala uma curiosidade,fora_escopo,gerado_ia
+qual o melhor restaurante da cidade,fora_escopo,gerado_ia
+voce consegue jogar xadrez,fora_escopo,gerado_ia
+qual a distancia daqui pra sao paulo,fora_escopo,gerado_ia
+me ajuda a escrever um email,fora_escopo,gerado_ia
