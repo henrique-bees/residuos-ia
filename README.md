@@ -4,7 +4,7 @@ Projeto Integrador Final — **Inteligência Artificial Aplicada** (AFYA • UNI
 Tema B — Identificação e classificação de resíduos.
 
 **Integrantes:** Henrique de Moraes Belo Lopes (equipe de 1 pessoa)
-**Repositório:** https://github.com/henrique-bees/residuos-ia (privado — liberar acesso ao professor antes da entrega)
+**Repositório:** https://github.com/henrique-bees/residuos-ia
 **Artigo (Overleaf):** _link_ — rascunho já em `artigo/main.tex` (falta compilar e revisar)
 
 ## Problema

@@ -170,7 +170,7 @@ cabe em 6 páginas; preencher integrantes e link do GitHub (marcados como `preen
 ### Tarefa 6: Acabamento — ⚠️ PARCIAL (2026-11-17)
 - ✅ Integrante preenchido (Henrique de Moraes Belo Lopes) no README e no `artigo/main.tex`.
 - ✅ Repositório criado no GitHub e `git push` feito: `https://github.com/henrique-bees/residuos-ia`
-  (privado — liberar acesso ao professor/avaliador antes da entrega).
+  (público).
 - **Falta:** link do Overleaf no README e no `artigo/main.tex` (seção Conclusão).
 - **Falta:** conferir que um clone limpo + os comandos do README reproduz tudo (não testado
   ainda — só foi validado rodando os comandos diretamente neste ambiente).
