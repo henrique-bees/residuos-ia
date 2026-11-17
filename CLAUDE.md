@@ -144,13 +144,16 @@ CNN 0,871/0,865 (acurácia/F1), baseline 0,700/0,697. Ver seção 4.
 - Opcional: comparar com embeddings (`sentence-transformers`, ex. `paraphrase-multilingual-MiniLM-L12-v2`)
   + regressão logística, como experimento extra.
 
-### Tarefa 3: Teste em campo (fortalece Experimentos e Limitações) — ❌ PENDENTE (precisa de fotos reais)
-- A equipe fotografa cerca de 20 resíduos reais por classe (fundo comum, celular).
-- Crie `dados/teste_campo/<classe>/` e um script `src/visao_computacional/avaliar_campo.py` que
-  avalia o modelo salvo nessas fotos e gera `resultados/metricas_cnn_campo.json` + matriz de confusão.
-- Compare com o resultado do TrashNet (queda esperada por mudança de domínio).
-- Avalie também a regra de confiança: em quantos erros da CNN o agente pediu nova foto
-  (taxa de recusa × acurácia entre as respostas aceitas). Isso dá um bom gráfico para o artigo.
+### Tarefa 3: Teste em campo (fortalece Experimentos e Limitações) — ⚠️ script pronto, falta as fotos
+- O script `src/visao_computacional/avaliar_campo.py` já está pronto e testado (com imagens
+  do TrashNet, depois removidas — não ficou nenhum resultado fictício no repo). Ele lê
+  `dados/teste_campo/<classe>/*.jpg`, avalia o modelo salvo, gera
+  `resultados/metricas_cnn_campo.json` + matriz de confusão, e já calcula a taxa de recusa
+  (confiança < 60%) e a acurácia entre as respostas aceitas.
+- **Falta só:** a equipe fotografar ~20 resíduos reais por classe (fundo comum, celular),
+  colocar em `dados/teste_campo/<classe>/` e rodar `python -m src.visao_computacional.avaliar_campo`.
+- Depois, comparar com o resultado do TrashNet (queda esperada por mudança de domínio) e
+  atualizar a Seção IV do artigo com esse número.
 
 ### Tarefa 4: Exemplos de entrada e saída — ✅ CONCLUÍDA (2026-11-17)
 8 exemplos reais em `resultados/exemplos/` (script usado: ver histórico do git; pode ser
