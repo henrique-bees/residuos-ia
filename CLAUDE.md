@@ -125,8 +125,10 @@ Intenções: `identificar`, `reciclavel`, `como_descartar`, `cor_lixeira`, `onde
 - **Tarefa 2 completa:** trocar as 140 frases `gerado_ia` por frases reais de colegas.
 - **Tarefa 3 (teste de campo):** precisa de ~20 fotos reais por classe tiradas pela equipe
   em `dados/teste_campo/<classe>/`, e do script `avaliar_campo.py` (ainda não escrito).
-- **Tarefa 6:** nome dos integrantes, link do Overleaf, push pro GitHub, e (opcional)
-  substituir os pontos de coleta simulados por dados oficiais de Maceió.
+- **Tarefa 6:** push pro GitHub já feito (`https://github.com/henrique-bees/residuos-ia`,
+  privado) e nome do integrante já preenchido (Henrique de Moraes Belo Lopes, equipe de 1
+  pessoa). Falta só o link do Overleaf e (opcional) substituir os pontos de coleta simulados
+  por dados oficiais de Maceió.
 
 ## 5. Próximas tarefas (em ordem)
 
@@ -165,11 +167,13 @@ regerado/ampliado facilmente adaptando a lista `CASOS` do script que gerou os ar
 cabe em 6 páginas; preencher integrantes e link do GitHub (marcados como `preencher` no
 `.tex`). Ver pendências detalhadas em `artigo/README.md`.
 
-### Tarefa 6: Acabamento — ❌ PENDENTE
-- Preencher integrantes e o link do Overleaf no README e no `artigo/main.tex`.
-- Criar o repositório no GitHub e dar `git push` (hoje o repo só existe localmente).
-- Conferir que um clone limpo + os comandos do README reproduz tudo (não testado ainda —
-  só foi validado rodando os comandos diretamente neste ambiente, não em um clone à parte).
+### Tarefa 6: Acabamento — ⚠️ PARCIAL (2026-11-17)
+- ✅ Integrante preenchido (Henrique de Moraes Belo Lopes) no README e no `artigo/main.tex`.
+- ✅ Repositório criado no GitHub e `git push` feito: `https://github.com/henrique-bees/residuos-ia`
+  (privado — liberar acesso ao professor/avaliador antes da entrega).
+- **Falta:** link do Overleaf no README e no `artigo/main.tex` (seção Conclusão).
+- **Falta:** conferir que um clone limpo + os comandos do README reproduz tudo (não testado
+  ainda — só foi validado rodando os comandos diretamente neste ambiente).
 - Opcional: substituir os pontos simulados por ecopontos oficiais de Maceió, citando a fonte.
 
 ## 6. Comandos úteis
