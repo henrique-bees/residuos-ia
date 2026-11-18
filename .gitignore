@@ -15,3 +15,6 @@ modelos/*
 .env
 
 .claude/commit-approved
+
+# Referência de continuidade para o Claude Code: não é parte do código do projeto
+CLAUDE.md
