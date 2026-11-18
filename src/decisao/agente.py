@@ -25,6 +25,7 @@ class Resposta:
     regras: list[str] = field(default_factory=list)
     rota: list[str] | None = None
     precisa_nova_foto: bool = False
+    aguardando_bairro: bool = False
 
 
 class AgenteDescarte:
@@ -34,13 +35,16 @@ class AgenteDescarte:
         self.mapa = mapa or MapaColeta()
 
     # ---------- interface usada pelo app ----------
-    def responder(self, pergunta: str, imagem=None, bairro: str | None = None) -> Resposta:
+    def responder(self, pergunta: str, imagem=None, bairro: str | None = None,
+                  material_lembrado: str | None = None,
+                  intencao_forcada: str | None = None) -> Resposta:
         r_visao = self.visao.classificar(imagem) if (imagem is not None and self.visao) else None
-        r_int = self.pln.prever(pergunta)
-        return self.decidir(r_visao, r_int.intencao, pergunta, bairro)
+        intencao = intencao_forcada or self.pln.prever(pergunta).intencao
+        return self.decidir(r_visao, intencao, pergunta, bairro, material_lembrado)
 
     # ---------- núcleo de decisão (testável sem modelos) ----------
-    def decidir(self, r_visao, intencao: str, pergunta: str, bairro: str | None = None) -> Resposta:
+    def decidir(self, r_visao, intencao: str, pergunta: str, bairro: str | None = None,
+                material_lembrado: str | None = None) -> Resposta:
         regras: list[str] = []
         ent = ent_mod.extrair(pergunta)
         bairro = ent.bairro or bairro
@@ -67,6 +71,14 @@ class AgenteDescarte:
             if r_visao and r_visao.confianca >= LIMIAR_CONFIANCA and r_visao.classe != material:
                 aviso = (f" (Obs.: pela imagem eu diria {CLASSES_PT[r_visao.classe]}, "
                          f"mas segui o que você escreveu.)")
+                regras.append("R4: divergência texto x visão registrada")
+        elif material_lembrado:
+            material, fonte = material_lembrado, "texto"
+            regras.append(f"R3b: material lembrado de mensagem anterior (“{material_lembrado}”) "
+                          "tem prioridade")
+            if r_visao and r_visao.confianca >= LIMIAR_CONFIANCA and r_visao.classe != material:
+                aviso = (f" (Obs.: pela imagem eu diria {CLASSES_PT[r_visao.classe]}, "
+                         f"mas segui o material que você disse antes.)")
                 regras.append("R4: divergência texto x visão registrada")
         elif r_visao is None:
             regras.append("R5: sem imagem e sem material no texto")
@@ -123,7 +135,7 @@ class AgenteDescarte:
             if not bairro:
                 regras.append("R14: falta a localização do usuário")
                 return Resposta(f"Para achar o ponto mais próximo que recebe {info['nome']}, "
-                                "me diga seu bairro.", **base)
+                                "me diga seu bairro.", aguardando_bairro=True, **base)
             busca = self.mapa.a_estrela(bairro, material)
             regras.append(f"R15: A* a partir de {bairro} ({busca.nos_expandidos} nós expandidos)")
             if not busca.encontrado:

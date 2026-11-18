@@ -1,7 +1,7 @@
 import pytest
 
 from src.config import MODELO_INTENCOES
-from src.pln.entidades import com_memoria_de_material, extrair
+from src.pln.entidades import extrair
 from src.pln.preprocessamento import normalizar
 
 
@@ -27,18 +27,6 @@ def test_extrair_bairro():
     assert extrair("onde levo isso").bairro is None
 
 
-def test_memoria_de_material_reinsere_quando_pergunta_nao_cita_material():
-    pergunta = com_memoria_de_material("como faço para reciclar isso?", "plastico")
-    assert extrair(pergunta).material == "plastic"
-
-
-def test_memoria_de_material_nao_sobrescreve_material_da_pergunta_atual():
-    pergunta = com_memoria_de_material("isso é de metal, como reciclo?", "vidro")
-    assert extrair(pergunta).material == "metal"
-
-
-def test_memoria_de_material_sem_lembrado_nao_altera_pergunta():
-    assert com_memoria_de_material("oi", None) == "oi"
 
 
 @pytest.mark.skipif(not MODELO_INTENCOES.exists(), reason="rode python -m src.pln.intencoes")

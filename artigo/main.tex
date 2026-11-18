@@ -103,6 +103,7 @@ código de cores para a coleta seletiva no Brasil (azul para papel, vermelho par
 amarelo para metal, verde para vidro, entre outras), usado como base de conhecimento do agente.
 
 \section{Metodologia}
+\label{sec:metodologia}
 
 \subsection{Visão por computador}
 
@@ -247,6 +248,30 @@ piorar as demais classes.
 \label{fig:confusao_intencoes}
 \end{figure}
 
+\subsection{Teste de campo: queda de domínio fora do TrashNet}
+
+Para verificar o quanto a mudança de domínio (fotos reais de celular, fundo e iluminação não
+controlados, em vez do fundo branco de estúdio do TrashNet) afeta a CNN, avaliamos o modelo
+salvo em 12 fotos reais tiradas pela equipe (papelão, plástico, vidro, metal e lixo
+orgânico/rejeito), fora do conjunto de treino ou teste. A acurácia caiu de 0,871 (TrashNet)
+para \textbf{0,417}, e o F1-macro de 0,865 para \textbf{0,356}. A classe mais afetada foi
+\textit{rejeito} (0\% de recall nas duas fotos de lixo orgânico — um tipo de cena, lixeira com
+resíduo misto, bem diferente de qualquer imagem do TrashNet), seguida de \textit{plástico}
+(33\% de recall: garrafas PET foram confundidas com vidro, uma confusão visual esperada entre
+materiais transparentes). O limiar de confiança (regra R6, Seção~\ref{sec:metodologia}) pediu
+nova foto em 25\% dos casos; considerando só as respostas que o agente efetivamente deu (sem
+recusar), a acurácia sobe para 0,556 — evidência de que o limiar reduz, mas não elimina, o
+impacto da mudança de domínio. A Figura~\ref{fig:confusao_campo} mostra a matriz de confusão
+completa. Esse é um teste com amostra pequena (12 fotos), então os números servem como
+evidência qualitativa da limitação, não como estimativa precisa da acurácia em campo.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\columnwidth]{../resultados/graficos/confusao_cnn_campo.png}
+\caption{Matriz de confusão da CNN nas 12 fotos reais de campo (fora do domínio do TrashNet).}
+\label{fig:confusao_campo}
+\end{figure}
+
 \subsection{Busca: A* x custo uniforme x BFS}
 
 A Tabela~\ref{tab:busca} compara as três estratégias de busca em todas as combinações de
@@ -312,9 +337,9 @@ alternativas.
 Como trabalhos futuros, destacam-se: (i) substituir progressivamente as frases geradas por
 IA por frases reais coletadas de usuários distintos, com gírias e erros de digitação mais
 diversos, para validar se o ganho de F1 se mantém fora de um conjunto mais homogêneo;
-(ii) avaliar o modelo de visão em fotos reais de celular, fora do domínio de fundo branco do
-TrashNet, e medir a queda de desempenho esperada pela mudança de domínio, bem como a taxa de
-recusa do agente (pedidos de nova foto) nesse cenário; (iii) substituir o grafo de bairros e
+(ii) ampliar o teste de campo (hoje com 12 fotos, Seção IV-C) para uma amostra maior e mais
+diversa de fotos reais de celular, para confirmar se a queda de desempenho observada
+(0,871 para 0,417 de acurácia) se mantém; (iii) substituir o grafo de bairros e
 os pontos de coleta simulados por dados oficiais de Maceió, citando a fonte; e (iv) estender
 as classes de resíduos para itens de descarte especial não cobertos pelo TrashNet (pilhas,
 eletrônicos, óleo, lâmpadas).

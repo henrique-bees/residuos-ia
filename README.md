@@ -106,12 +106,16 @@ Os arquivos ficam em `resultados/` (métricas em JSON/CSV), `resultados/graficos
 | Intenções — melhor modelo (CV 5 folds) | F1-macro | 0,88 ± 0,06 (SVM linear) |
 | Intenções (teste, 25%) | acurácia / F1-macro | 0,93 / 0,94 |
 | Busca A* | nós expandidos (média) / % ótimo | 3,1 / 100% (custo uniforme: 4,8 / 100%; BFS: 4,6 / 75%) |
+| CNN — teste de campo (12 fotos reais, fora do TrashNet) | acurácia / F1-macro | 0,42 / 0,36 (taxa de recusa 25%; acurácia entre respostas aceitas: 0,56) |
 
 ## Limitações
 
 - O TrashNet tem fotos com fundo branco e um objeto por imagem; fotos reais (fundo poluído,
-  vários objetos) tendem a reduzir a acurácia. Sugestão: montar um pequeno conjunto de teste
-  próprio (≈ 20 fotos por classe) e reportar a queda no artigo.
+  vários objetos) reduzem bastante a acurácia — confirmado com 12 fotos reais de campo:
+  acurácia caiu de 0,871 para 0,417 (ver `resultados/metricas_cnn_campo.json`). A classe mais
+  afetada foi "rejeito" (lixeira com lixo orgânico misto, 0% de acerto — um tipo de cena muito
+  diferente do TrashNet) e "plástico" (garrafas PET confundidas com vidro). Amostra pequena;
+  o ideal é ampliar pra ≈ 20 fotos por classe.
 - O dataset de intenções mistura frases escritas pela equipe com frases geradas por IA
   (marcadas em `origem=gerado_ia` no CSV); a melhora de F1 (0,70 → 0,94) reflete em parte
   textos mais parecidos entre si (o classificador aprende um estilo mais previsível), não

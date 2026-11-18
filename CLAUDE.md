@@ -86,11 +86,11 @@ Pergunta ─► PLN: intenção (TF-IDF + NB/LR/SVM) + entidades (léxico) ─�
 
 Intenções: `identificar`, `reciclavel`, `como_descartar`, `cor_lixeira`, `onde_descartar`, `saudacao`, `fora_escopo`.
 
-## 4. Estado atual (atualizado em 2026-11-17)
+## 4. Estado atual (atualizado em 2026-11-18)
 
 **Ambiente**
-- Repositório git inicializado localmente (ainda sem remoto no GitHub). Venv em `.venv/`
-  (Python 3.14) com `requirements.txt` instalado; GPU CUDA disponível neste ambiente.
+- Repositório no GitHub: https://github.com/henrique-bees/residuos-ia (público). Venv em
+  `.venv/` (Python 3.14) com `requirements.txt` instalado; GPU CUDA disponível neste ambiente.
 - Hook de projeto exige aprovação explícita (`.claude/commit-approved`, consumido a cada uso)
   antes de qualquer `git commit` — ver skill `commit-por-etapas`.
 - `pytest testes -q` funciona direto agora (adicionado `pytest.ini` com `pythonpath = .`;
@@ -118,29 +118,36 @@ Intenções: `identificar`, `reciclavel`, `como_descartar`, `cor_lixeira`, `onde
 - **Bug real encontrado e corrigido (2026-11-18):** o app não tinha memória de conversa — se
   o usuário dizia o material numa mensagem ("isso é plástico") e perguntava algo na mensagem
   seguinte ("como reciclo isso?"), o material citado antes era esquecido (cada pergunta era
-  processada isoladamente). Corrigido com `com_memoria_de_material()` em
-  `src/pln/entidades.py` + estado de sessão no `app.py`: se a pergunta atual não cita
-  material, reaproveita o último material citado por texto na mesma conversa (reiniciado ao
-  trocar a foto). Testado com `testes/test_pln.py`.
+  processada isoladamente).
+  **Primeira tentativa de correção (reinserir texto na pergunta) causou um bug novo:** inserir
+  "(material mencionado antes: X)" na pergunta antes de mandar pro classificador de intenção
+  confundia o modelo e trocava a intenção real (ex. "bairro da jatiuca" virava "identificar"
+  em vez de continuar o fluxo de "onde descartar"). **Correção definitiva:** `material` agora
+  é passado como parâmetro separado (`material_lembrado`) para `AgenteDescarte.decidir()`
+  (nova regra R3b em `src/decisao/agente.py`), sem tocar no texto que vai pro classificador de
+  ML. Da mesma forma, quando o agente pede o bairro (R14) e a resposta só traz a localização
+  (ex. "moro na jatiuca", "meu bairro é o da jatiuca"), o app agora retoma a intenção
+  "onde_descartar" diretamente (`aguardando_bairro` em `Resposta` + `intencao_forcada` em
+  `responder()`) em vez de reclassificar do zero uma frase sem verbo claro. Testado em
+  `testes/test_decisao.py`.
 - **Tarefa 4 (exemplos) — CONCLUÍDA:** 8 exemplos reais em `resultados/exemplos/` (imagem do
   split de teste + pergunta → resposta do agente + regras), gerados pelo pipeline completo
   (CNN real + PLN real + agente + A*). Inclui um erro real da CNN (papelão confundido com
   papel) — útil para a seção de limitações do artigo.
-- **Tarefa 5 (artigo) — RASCUNHO pronto, não compilado:** `artigo/main.tex` +
-  `artigo/referencias.bib` com os números reais acima. Não há LaTeX instalado neste ambiente
-  (precisaria de `sudo apt install texlive-...`, que exige senha interativa), então só foi
-  validado manualmente (braces/ambientes balanceados, figuras existem nos caminhos citados).
-  **Falta:** compilar no Overleaf e conferir se cabe em 6 páginas, preencher integrantes e
-  link do GitHub (ver pendências em `artigo/README.md`).
+- **Tarefa 5 (artigo) — compilado no Overleaf, 4 páginas:** `artigo/main.tex` +
+  `artigo/referencias.bib` com os números reais (incluindo o teste de campo da Tarefa 3).
+  Link (Viewer): https://www.overleaf.com/project/6afce9ccfddd89d11d81d8ae/share#786d039eed9eab936c4c1d4e0a29961643fc71ad89f190aa.
+  **Importante:** o Overleaf não sincroniza com o GitHub automaticamente — qualquer mudança no
+  `.tex`/figuras local precisa ser copiada manualmente lá (upload do arquivo/imagem), e vice-versa.
 
-**Ainda NÃO feito (precisa de ação humana, não dá pra automatizar com integridade)**
-- **Tarefa 2 completa:** trocar as 140 frases `gerado_ia` por frases reais de colegas.
-- **Tarefa 3 (teste de campo):** precisa de ~20 fotos reais por classe tiradas pela equipe
-  em `dados/teste_campo/<classe>/`, e do script `avaliar_campo.py` (ainda não escrito).
-- **Tarefa 6:** push pro GitHub já feito (`https://github.com/henrique-bees/residuos-ia`,
-  privado) e nome do integrante já preenchido (Henrique de Moraes Belo Lopes, equipe de 1
-  pessoa). Falta só o link do Overleaf e (opcional) substituir os pontos de coleta simulados
-  por dados oficiais de Maceió.
+**Ainda NÃO feito**
+- **Tarefa 2 completa (opcional, melhora ainda mais):** trocar as 150 frases `gerado_ia` por
+  frases reais de colegas.
+- **Tarefa 3 (opcional, reforça ainda mais):** ampliar a amostra do teste de campo (hoje 12
+  fotos) para ~20 fotos por classe.
+- **Demonstração funcional (vídeo ou ao vivo):** ainda não feita — essa é uma das 3 entregas
+  exigidas pelo enunciado (Seção 1), além do GitHub e do artigo.
+- Opcional: substituir os pontos de coleta simulados por dados oficiais de Maceió, citando a fonte.
 
 ## 5. Próximas tarefas (em ordem)
 
@@ -158,16 +165,19 @@ CNN 0,871/0,865 (acurácia/F1), baseline 0,700/0,697. Ver seção 4.
 - Opcional: comparar com embeddings (`sentence-transformers`, ex. `paraphrase-multilingual-MiniLM-L12-v2`)
   + regressão logística, como experimento extra.
 
-### Tarefa 3: Teste em campo (fortalece Experimentos e Limitações) — ⚠️ script pronto, falta as fotos
-- O script `src/visao_computacional/avaliar_campo.py` já está pronto e testado (com imagens
-  do TrashNet, depois removidas — não ficou nenhum resultado fictício no repo). Ele lê
-  `dados/teste_campo/<classe>/*.jpg`, avalia o modelo salvo, gera
-  `resultados/metricas_cnn_campo.json` + matriz de confusão, e já calcula a taxa de recusa
-  (confiança < 60%) e a acurácia entre as respostas aceitas.
-- **Falta só:** a equipe fotografar ~20 resíduos reais por classe (fundo comum, celular),
-  colocar em `dados/teste_campo/<classe>/` e rodar `python -m src.visao_computacional.avaliar_campo`.
-- Depois, comparar com o resultado do TrashNet (queda esperada por mudança de domínio) e
-  atualizar a Seção IV do artigo com esse número.
+### Tarefa 3: Teste em campo (fortalece Experimentos e Limitações) — ✅ feita com amostra pequena (2026-11-18)
+- Henrique tirou 12 fotos reais (papelão, plástico, vidro, metal e lixo orgânico/rejeito),
+  organizadas em `dados/teste_campo/<classe>/`, e rodamos
+  `python -m src.visao_computacional.avaliar_campo`.
+- **Resultado real:** acurácia caiu de 0,871 (TrashNet) para **0,417**, F1-macro de 0,865
+  para **0,356**. Rejeito (lixo orgânico) teve 0% de recall — tipo de cena muito diferente do
+  TrashNet (lixeira com resíduo misto, não um item isolado). Plástico teve 33% de recall
+  (PET confundido com vidro). Taxa de recusa (confiança < 60%) = 25%; acurácia entre as
+  respostas aceitas = 0,556. Números em `resultados/metricas_cnn_campo.json` e
+  `resultados/graficos/confusao_cnn_campo.png`. Já incluído no artigo (Seção IV-C).
+- **Falta (opcional, reforça ainda mais):** ampliar para ~20 fotos por classe — amostra atual
+  é pequena (12 fotos no total), então os números são evidência qualitativa, não uma
+  estimativa precisa.
 
 ### Tarefa 4: Exemplos de entrada e saída — ✅ CONCLUÍDA (2026-11-17)
 8 exemplos reais em `resultados/exemplos/` (script usado: ver histórico do git; pode ser

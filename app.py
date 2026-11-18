@@ -11,7 +11,7 @@ from PIL import Image
 from src.config import CLASSES_PT, JSON_MAPA, MODELO_CNN, MODELO_INTENCOES
 from src.decisao.agente import AgenteDescarte
 from src.decisao.grafo import MapaColeta
-from src.pln.entidades import com_memoria_de_material, extrair
+from src.pln.entidades import extrair
 
 st.set_page_config(page_title="Descarte Inteligente — Maceió", page_icon="♻️", layout="wide")
 
@@ -45,6 +45,7 @@ with col_img:
     if sig_imagem != st.session_state.get("sig_imagem"):
         st.session_state.sig_imagem = sig_imagem
         st.session_state.material_lembrado = None
+        st.session_state.aguardando_bairro = False
     imagem = Image.open(origem) if origem else None
     if imagem is not None:
         st.image(imagem)
@@ -63,15 +64,22 @@ with col_chat:
     pergunta = st.chat_input("Ex.: isso é reciclável? / onde levo isso?")
     if pergunta:
         st.chat_message("user").markdown(pergunta)
-        pergunta_agente = com_memoria_de_material(pergunta, st.session_state.get("material_lembrado"))
-        resp = agente.responder(pergunta_agente, imagem, bairro)
         ent_atual = extrair(pergunta)
+        # Se a mensagem anterior pediu o bairro e esta só traz a localização (sem um verbo
+        # claro de "onde descartar"), retoma o mesmo pedido em vez de reclassificar do zero.
+        intencao_forcada = ("onde_descartar"
+                             if st.session_state.get("aguardando_bairro") and (ent_atual.bairro or bairro)
+                             else None)
+        resp = agente.responder(pergunta, imagem, bairro,
+                                 material_lembrado=st.session_state.get("material_lembrado"),
+                                 intencao_forcada=intencao_forcada)
         if ent_atual.material:
-            st.session_state.material_lembrado = ent_atual.termo_material
+            st.session_state.material_lembrado = ent_atual.material
+        st.session_state.aguardando_bairro = resp.aguardando_bairro
         st.chat_message("assistant").markdown(resp.texto)
         st.session_state.historico += [("user", pergunta), ("assistant", resp.texto)]
         with st.expander("Como o agente decidiu"):
-            r_int = agente.pln.prever(pergunta_agente)
+            r_int = agente.pln.prever(pergunta)
             st.write(f"**Intenção:** {r_int.intencao} ({r_int.confianca:.0%})")
             st.write(f"**Material:** {resp.material} (fonte: {resp.fonte_material})")
             st.write("**Regras disparadas:**")
