@@ -171,7 +171,9 @@ cabe em 6 páginas; preencher integrantes e link do GitHub (marcados como `preen
 - ✅ Integrante preenchido (Henrique de Moraes Belo Lopes) no README e no `artigo/main.tex`.
 - ✅ Repositório criado no GitHub e `git push` feito: `https://github.com/henrique-bees/residuos-ia`
   (público).
-- **Falta:** link do Overleaf no README e no `artigo/main.tex` (seção Conclusão).
+- ✅ Link do Overleaf (modo Viewer) adicionado no README:
+  https://www.overleaf.com/project/6afce9ccfddd89d11d81d8ae/share#786d039eed9eab936c4c1d4e0a29961643fc71ad89f190aa
+- **Falta:** confirmar no Overleaf que o artigo compila sem erro e cabe em 6 páginas.
 - **Falta:** conferir que um clone limpo + os comandos do README reproduz tudo (não testado
   ainda — só foi validado rodando os comandos diretamente neste ambiente).
 - Opcional: substituir os pontos simulados por ecopontos oficiais de Maceió, citando a fonte.

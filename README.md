@@ -5,7 +5,7 @@ Tema B — Identificação e classificação de resíduos.
 
 **Integrantes:** Henrique de Moraes Belo Lopes (equipe de 1 pessoa)
 **Repositório:** https://github.com/henrique-bees/residuos-ia
-**Artigo (Overleaf):** _link_ — rascunho já em `artigo/main.tex` (falta compilar e revisar)
+**Artigo (Overleaf):** https://www.overleaf.com/project/6afce9ccfddd89d11d81d8ae/share#786d039eed9eab936c4c1d4e0a29961643fc71ad89f190aa — rascunho em `artigo/main.tex` (conferir se compila e se cabe em 6 páginas)
 
 ## Problema
 
