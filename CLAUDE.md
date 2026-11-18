@@ -103,13 +103,25 @@ Intenções: `identificar`, `reciclavel`, `como_descartar`, `cor_lixeira`, `onde
   acurácia **0,700**, F1-macro **0,697**. Splits em `dados/splits/*.csv` (commitados). Modelos
   e imagens do dataset ficam fora do git (`modelos/`, `dados/trashnet/`).
 - **Tarefa 2 (PLN) — PARCIALMENTE feita:** `dados/intencoes.csv` ampliado de ~145 para
-  **286 frases** (146 `origem=equipe` + 140 `origem=gerado_ia`, geradas por mim, não por
+  **296 frases** (146 `origem=equipe` + 150 `origem=gerado_ia`, geradas por mim, não por
   colegas reais — está marcado na coluna `origem` do CSV para ser honesto sobre a origem).
-  F1-macro no teste subiu de 0,696 para **0,943** (melhor modelo agora é Regressão Logística,
-  CV 0,888 ± 0,057). **Ressalva importante:** frases geradas por IA tendem a ser mais
+  F1-macro no teste subiu de 0,696 para **0,935** (melhor modelo agora é SVM linear calibrado,
+  CV 0,877 ± 0,061). **Ressalva importante:** frases geradas por IA tendem a ser mais
   homogêneas que frases reais, então parte do ganho pode estar inflado — o ideal é substituir
   as linhas `gerado_ia` por frases reais de colegas (gírias, erros de digitação variados) e
   re-rodar `python -m src.pln.intencoes` para ver se o F1 real se mantém.
+- **Bug real encontrado e corrigido (2026-11-18), achado pelo Henrique testando o app:**
+  frases com "como" + "reciclar" (ex. "como reciclar isso?") caíam na intenção `reciclavel`
+  (sim/não) em vez de `como_descartar` (instruções), porque os exemplos de treino de
+  `como_descartar` só usavam "descartar/separar/jogar fora", nunca "reciclar". Corrigido
+  adicionando 10 frases `como_descartar` com "como...reciclar" e re-treinando.
+- **Bug real encontrado e corrigido (2026-11-18):** o app não tinha memória de conversa — se
+  o usuário dizia o material numa mensagem ("isso é plástico") e perguntava algo na mensagem
+  seguinte ("como reciclo isso?"), o material citado antes era esquecido (cada pergunta era
+  processada isoladamente). Corrigido com `com_memoria_de_material()` em
+  `src/pln/entidades.py` + estado de sessão no `app.py`: se a pergunta atual não cita
+  material, reaproveita o último material citado por texto na mesma conversa (reiniciado ao
+  trocar a foto). Testado com `testes/test_pln.py`.
 - **Tarefa 4 (exemplos) — CONCLUÍDA:** 8 exemplos reais em `resultados/exemplos/` (imagem do
   split de teste + pergunta → resposta do agente + regras), gerados pelo pipeline completo
   (CNN real + PLN real + agente + A*). Inclui um erro real da CNN (papelão confundido com

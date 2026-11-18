@@ -65,3 +65,13 @@ def extrair(texto: str) -> Entidades:
             ent.bairro = b
             break
     return ent
+
+
+def com_memoria_de_material(pergunta: str, termo_lembrado: str | None) -> str:
+    """Reinsere, como contexto, o último material citado pelo usuário em mensagens anteriores
+    da mesma conversa, quando a pergunta atual não cita nenhum material. Sem isso, uma conversa
+    em turnos ("isso é plástico" / depois "como reciclo isso?") perde o material a cada mensagem,
+    já que cada pergunta é processada isoladamente."""
+    if termo_lembrado and extrair(pergunta).material is None:
+        return f"(material mencionado antes: {termo_lembrado}) {pergunta}"
+    return pergunta

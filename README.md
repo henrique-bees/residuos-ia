@@ -90,7 +90,7 @@ python -m src.visao_computacional.avaliar_campo
 | Dado | Origem | Observações |
 |---|---|---|
 | Imagens | TrashNet (Thung & Yang, 2016): ~2.500 fotos, 6 classes | Verificar a licença no repositório original. Imagens corrompidas são descartadas no carregamento. |
-| Frases de intenção | `dados/intencoes.csv`: 146 frases escritas pela equipe + 140 geradas por IA (coluna `origem`) | 7 intenções, ≥ 40 frases cada. **Trocar as frases `gerado_ia` por frases reais de colegas** (gírias, erros de digitação) tende a melhorar ainda mais a generalização. |
+| Frases de intenção | `dados/intencoes.csv`: 146 frases escritas pela equipe + 150 geradas por IA (coluna `origem`) | 7 intenções, ≥ 40 frases cada. **Trocar as frases `gerado_ia` por frases reais de colegas** (gírias, erros de digitação) tende a melhorar ainda mais a generalização. |
 | Mapa | `dados/mapa_maceio.json` | **Simulado**: coordenadas aproximadas dos bairros e pontos de coleta fictícios. |
 
 ## Resultados
@@ -103,8 +103,8 @@ Os arquivos ficam em `resultados/` (métricas em JSON/CSV), `resultados/graficos
 |---|---|---|
 | CNN MobileNetV2 (teste) | acurácia / F1-macro | 0,87 / 0,86 |
 | Baseline HOG + SVM (teste) | acurácia / F1-macro | 0,70 / 0,70 |
-| Intenções — melhor modelo (CV 5 folds) | F1-macro | 0,89 ± 0,06 (Regressão Logística) |
-| Intenções (teste, 25%) | acurácia / F1-macro | 0,94 / 0,94 |
+| Intenções — melhor modelo (CV 5 folds) | F1-macro | 0,88 ± 0,06 (SVM linear) |
+| Intenções (teste, 25%) | acurácia / F1-macro | 0,93 / 0,94 |
 | Busca A* | nós expandidos (média) / % ótimo | 3,1 / 100% (custo uniforme: 4,8 / 100%; BFS: 4,6 / 75%) |
 
 ## Limitações

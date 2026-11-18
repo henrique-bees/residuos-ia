@@ -202,12 +202,12 @@ confundido com papel), o que também aparece nos exemplos qualitativos do reposi
 
 \subsection{PLN: comparação de classificadores de intenção}
 
-O conjunto de frases de intenção tem 286 exemplos em 7 categorias, sendo 146 escritos pela
-equipe e 140 gerados por IA como complemento (explicitamente marcados por uma coluna de
+O conjunto de frases de intenção tem 296 exemplos em 7 categorias, sendo 146 escritos pela
+equipe e 150 gerados por IA como complemento (explicitamente marcados por uma coluna de
 origem no arquivo de dados), para atingir pelo menos 40 exemplos por categoria. A
 Tabela~\ref{tab:intencoes} mostra o F1-macro médio por validação cruzada (5 \textit{folds})
-para os três classificadores comparados; a Regressão Logística foi a melhor e, re-treinada
-com todos os dados de treino, atingiu acurácia de 0,944 e F1-macro de 0,943 no conjunto de
+para os três classificadores comparados; o SVM linear (calibrado) foi o melhor e, re-treinado
+com todos os dados de treino, atingiu acurácia de 0,932 e F1-macro de 0,935 no conjunto de
 teste (25\% dos dados, nunca usado no ajuste).
 
 \begin{table}[htbp]
@@ -217,9 +217,9 @@ teste (25\% dos dados, nunca usado no ajuste).
 \hline
 \textbf{Classificador} & \textbf{F1-macro (média $\pm$ desvio)} \\
 \hline
-Regressão Logística & 0,888 $\pm$ 0,057 \\
-SVM linear (calibrado) & 0,881 $\pm$ 0,065 \\
-Naive Bayes (ComplementNB) & 0,874 $\pm$ 0,064 \\
+SVM linear (calibrado) & 0,877 $\pm$ 0,061 \\
+Regressão Logística & 0,865 $\pm$ 0,046 \\
+Naive Bayes (ComplementNB) & 0,838 $\pm$ 0,033 \\
 \hline
 \end{tabular}
 \label{tab:intencoes}
@@ -231,8 +231,14 @@ homogêneas entre si do que frases reais escritas por pessoas diferentes, o que 
 tarefa do classificador e pode inflar a métrica em relação ao que se observaria com uma
 base inteiramente coletada de usuários reais, com gírias e erros de digitação mais
 diversos. Ainda assim, o ganho relativo ao conjunto original (F1-macro de teste subindo de
-0,696 para 0,943) é coerente com o esperado ao reduzir drasticamente a escassez de dados por
-classe (de cerca de 20 para mais de 40 exemplos por intenção).
+0,696 para 0,935) é coerente com o esperado ao reduzir drasticamente a escassez de dados por
+classe (de cerca de 20 para mais de 40 exemplos por intenção). Uma lacuna real encontrada em
+testes manuais foi corrigida durante o desenvolvimento: frases com "como" combinado com o
+verbo "reciclar" (ex. "como reciclar isso?") eram classificadas como \textit{reciclavel}
+(pergunta de sim/não) em vez de \textit{como\_descartar} (pedido de instruções), porque os
+exemplos de treino de \textit{como\_descartar} só usavam verbos como "descartar" e "separar".
+Adicionar exemplos de \textit{como\_descartar} com o verbo "reciclar" resolveu o caso sem
+piorar as demais classes.
 
 \begin{figure}[htbp]
 \centering
@@ -298,7 +304,7 @@ Este trabalho apresentou um assistente de descarte de resíduos que integra vis�
 computacional, PLN e um agente baseado em regras com busca informada, avaliando cada módulo
 isoladamente com métricas reprodutíveis. A CNN com \textit{transfer learning} superou
 claramente o baseline clássico (F1-macro 0,865 x 0,697); o classificador de intenções
-atingiu F1-macro de 0,943 no teste, com a ressalva de que parte do ganho vem de dados
+atingiu F1-macro de 0,935 no teste, com a ressalva de que parte do ganho vem de dados
 gerados por IA, mais homogêneos que frases reais; e a busca A* confirmou, na prática, a
 garantia teórica de otimalidade da heurística admissível, expandindo menos nós que as
 alternativas.

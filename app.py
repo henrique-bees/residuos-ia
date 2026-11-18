@@ -11,6 +11,7 @@ from PIL import Image
 from src.config import CLASSES_PT, JSON_MAPA, MODELO_CNN, MODELO_INTENCOES
 from src.decisao.agente import AgenteDescarte
 from src.decisao.grafo import MapaColeta
+from src.pln.entidades import com_memoria_de_material, extrair
 
 st.set_page_config(page_title="Descarte Inteligente — Maceió", page_icon="♻️", layout="wide")
 
@@ -40,6 +41,10 @@ with col_img:
     arquivo = st.file_uploader("Foto do resíduo", type=["jpg", "jpeg", "png"])
     camera = st.camera_input("…ou tire uma foto agora")
     origem = camera or arquivo
+    sig_imagem = getattr(origem, "file_id", None)
+    if sig_imagem != st.session_state.get("sig_imagem"):
+        st.session_state.sig_imagem = sig_imagem
+        st.session_state.material_lembrado = None
     imagem = Image.open(origem) if origem else None
     if imagem is not None:
         st.image(imagem)
@@ -58,11 +63,15 @@ with col_chat:
     pergunta = st.chat_input("Ex.: isso é reciclável? / onde levo isso?")
     if pergunta:
         st.chat_message("user").markdown(pergunta)
-        resp = agente.responder(pergunta, imagem, bairro)
+        pergunta_agente = com_memoria_de_material(pergunta, st.session_state.get("material_lembrado"))
+        resp = agente.responder(pergunta_agente, imagem, bairro)
+        ent_atual = extrair(pergunta)
+        if ent_atual.material:
+            st.session_state.material_lembrado = ent_atual.termo_material
         st.chat_message("assistant").markdown(resp.texto)
         st.session_state.historico += [("user", pergunta), ("assistant", resp.texto)]
         with st.expander("Como o agente decidiu"):
-            r_int = agente.pln.prever(pergunta)
+            r_int = agente.pln.prever(pergunta_agente)
             st.write(f"**Intenção:** {r_int.intencao} ({r_int.confianca:.0%})")
             st.write(f"**Material:** {resp.material} (fonte: {resp.fonte_material})")
             st.write("**Regras disparadas:**")
