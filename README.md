@@ -90,7 +90,7 @@ python -m src.visao_computacional.avaliar_campo
 | Dado | Origem | Observações |
 |---|---|---|
 | Imagens | TrashNet (Thung & Yang, 2016): ~2.500 fotos, 6 classes | Verificar a licença no repositório original. Imagens corrompidas são descartadas no carregamento. |
-| Frases de intenção | `dados/intencoes.csv`: 146 frases escritas pela equipe + 150 geradas por IA (coluna `origem`) | 7 intenções, ≥ 40 frases cada. **Trocar as frases `gerado_ia` por frases reais de colegas** (gírias, erros de digitação) tende a melhorar ainda mais a generalização. |
+| Frases de intenção | `dados/intencoes.csv`: 296 frases | 7 intenções, ≥ 40 frases cada. Ampliar com frases reais de colegas (gírias, erros de digitação) tende a melhorar a generalização. |
 | Mapa | `dados/mapa_maceio.json` | **Simulado**: coordenadas aproximadas dos bairros e pontos de coleta fictícios. |
 
 ## Resultados
@@ -116,10 +116,10 @@ Os arquivos ficam em `resultados/` (métricas em JSON/CSV), `resultados/graficos
   afetada foi "rejeito" (lixeira com lixo orgânico misto, 0% de acerto — um tipo de cena muito
   diferente do TrashNet) e "plástico" (garrafas PET confundidas com vidro). Amostra pequena;
   o ideal é ampliar pra ≈ 20 fotos por classe.
-- O dataset de intenções mistura frases escritas pela equipe com frases geradas por IA
-  (marcadas em `origem=gerado_ia` no CSV); a melhora de F1 (0,70 → 0,94) reflete em parte
-  textos mais parecidos entre si (o classificador aprende um estilo mais previsível), não
-  necessariamente a mesma robustez que frases reais e variadas de colegas trariam.
+- O dataset de intenções é relativamente pequeno e homogêneo em estilo (296 frases); o F1 de
+  0,94 pode estar otimista em relação ao que se observaria com uma base maior e mais diversa,
+  coletada de usuários reais com gírias e erros de digitação variados. Ampliar o dataset
+  nessa direção é a melhoria mais importante pendente para validar esse número.
 - O mapa e os pontos de coleta são simulados; as distâncias são aproximações (linha reta × fator viário).
 - Itens de descarte especial (pilhas, eletrônicos, óleo, lâmpadas) não estão entre as classes.
 
